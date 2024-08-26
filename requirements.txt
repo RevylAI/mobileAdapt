@@ -1,0 +1,6 @@
+appium-python-client
+loguru
+lxml
+numpy
+attrs
+str2bool
