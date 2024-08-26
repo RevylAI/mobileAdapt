@@ -1,6 +1,7 @@
-appium-python-client
-loguru
-lxml
-numpy
-attrs
-str2bool
+appium-python-client  # Core Appium client for Python
+loguru  # Improved logging
+lxml  # XML and HTML processing
+numpy  # Numerical computing (often used for data processing)
+attrs  # Classes without boilerplate
+str2bool  # Convert string to boolean
+
