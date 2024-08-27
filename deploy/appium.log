@@ -1,0 +1,1430 @@
+2024-08-27 03:40:10:794 [Appium] Welcome to Appium v2.11.2 (REV 874d2da45344d3b27aa740e555b0210d8c474220)
+2024-08-27 03:40:10:796 [Appium] The autodetected Appium home path: /Users/wasifsarker/.appium
+2024-08-27 03:40:10:797 [Appium] Attempting to load driver uiautomator2...
+2024-08-27 03:40:10:798 [Appium] Requiring driver at /Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+2024-08-27 03:40:11:291 [Appium] AndroidUiautomator2Driver has been successfully loaded in 0.494s
+2024-08-27 03:40:11:304 [Appium] Appium REST http interface listener started on http://0.0.0.0:4723
+2024-08-27 03:40:11:305 [Appium] You can provide the following URLs in your client code to connect to this server:
+	http://127.0.0.1:4723/ (only accessible from the same host)
+	http://192.168.0.73:4723/
+2024-08-27 03:40:11:305 [Appium] Available drivers:
+2024-08-27 03:40:11:306 [Appium]   - uiautomator2@3.7.4 (automationName 'UiAutomator2')
+2024-08-27 03:40:11:306 [Appium] No plugins have been installed. Use the "appium plugin" command to install the one(s) you want to use.
+2024-08-27 03:40:12:056 [HTTP] --> GET /wd/hub/status {}
+2024-08-27 03:40:12:063 [HTTP] No route found for /wd/hub/status
+2024-08-27 03:40:12:066 [HTTP] <-- GET /wd/hub/status 404 9 ms - 211 
+2024-08-27 03:50:58:010 [HTTP] Request idempotency key: 42c2c45a-cdb6-422a-9f98-ab3cb53714fd
+2024-08-27 03:50:58:030 [HTTP] --> POST /session {"capabilities":{"firstMatch":[{}],"alwaysMatch":{"appium:automationName":"UiAutomator2","platformName":"Android","appium:deviceName":"Android Device","appium:autoGrantPermission":true,"appium:newCommandTimeout":600,"appium:mjpegScreenshotUrl":"http://localhost:4723/stream.mjpeg"}}}
+2024-08-27 03:50:58:031 [AppiumDriver@e391] Calling AppiumDriver.createSession() with args: [null,null,{"firstMatch":[{}],"alwaysMatch":{"appium:automationName":"UiAutomator2","platformName":"Android","appium:deviceName":"Android Device","appium:autoGrantPermission":true,"appium:newCommandTimeout":600,"appium:mjpegScreenshotUrl":"http://localhost:4723/stream.mjpeg"}}]
+2024-08-27 03:50:58:032 [AppiumDriver@e391] Event 'newSessionRequested' logged at 1724730658032 (20:50:58 GMT-0700 (Pacific Daylight Time))
+2024-08-27 03:50:58:036 [Appium] Attempting to find matching driver for automationName 'UiAutomator2' and platformName 'Android'
+2024-08-27 03:50:58:036 [Appium] The 'uiautomator2' driver was installed and matched caps.
+2024-08-27 03:50:58:036 [Appium] Will require it at /Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver
+2024-08-27 03:50:58:038 [Appium] Requiring driver at /Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+2024-08-27 03:50:58:039 [AppiumDriver@e391] Appium v2.11.2 creating new AndroidUiautomator2Driver (v3.7.4) session
+2024-08-27 03:50:58:039 [AppiumDriver@e391] Checking BaseDriver versions for Appium and AndroidUiautomator2Driver
+2024-08-27 03:50:58:039 [AppiumDriver@e391] Appium's BaseDriver version is 9.11.2
+2024-08-27 03:50:58:039 [AppiumDriver@e391] AndroidUiautomator2Driver's BaseDriver version is 9.11.2
+2024-08-27 03:50:58:049 [38;5;-168m[AndroidUiautomator2Driver@fc7a] undefined
+2024-08-27 03:50:58:049 [38;5;-168m[AndroidUiautomator2Driver@fc7a] Creating session with W3C capabilities: {
+  "alwaysMatch": {
+    "platformName": "Android",
+    "appium:automationName": "UiAutomator2",
+    "appium:deviceName": "Android Device",
+    "appium:autoGrantPermission": true,
+    "appium:newCommandTimeout": 600,
+    "appium:mjpegScreenshotUrl": "http://localhost:4723/stream.mjpeg"
+  },
+  "firstMatch": [
+    {}
+  ]
+}
+2024-08-27 03:50:58:057 [38;5;-168m[AndroidUiautomator2Driver@fc7a] The following provided capabilities were not recognized by this driver:
+2024-08-27 03:50:58:057 [38;5;-168m[AndroidUiautomator2Driver@fc7a]   autoGrantPermission
+2024-08-27 03:50:58:058 [b2691c50][38;5;-168m[AndroidUiautomator2Driver@fc7a] Session created with session id: b2691c50-8960-4bbb-bea7-86f83ab1eee8
+2024-08-27 03:50:58:071 [b2691c50][ADB] Found 1 'build-tools' folders under '/Users/wasifsarker/Library/Android/sdk' (newest first):
+2024-08-27 03:50:58:071 [b2691c50][ADB]     /Users/wasifsarker/Library/Android/sdk/build-tools/35.0.0
+2024-08-27 03:50:58:071 [b2691c50][ADB] Using 'adb' from '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb'
+2024-08-27 03:50:58:072 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+2024-08-27 03:50:58:285 [b2691c50][38;5;-168m[AndroidUiautomator2Driver@fc7a] Retrieving device list
+2024-08-27 03:50:58:285 [b2691c50][ADB] Trying to find connected Android devices
+2024-08-27 03:50:58:285 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:50:58:299 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:50:58:299 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:50:58:299 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:50:58:299 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:50:58:514 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:50:58:528 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:50:58:528 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:50:58:528 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:50:58:529 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:50:58:742 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:50:58:756 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:50:58:756 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:50:58:756 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:50:58:756 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:50:58:969 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:50:58:984 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:50:58:984 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:50:58:984 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:50:58:984 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:50:59:198 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:50:59:210 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:50:59:210 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:50:59:210 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:50:59:210 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:50:59:424 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:50:59:448 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:50:59:448 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:50:59:448 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:50:59:448 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:50:59:664 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:50:59:676 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:50:59:677 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:50:59:677 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:50:59:677 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:50:59:889 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:50:59:913 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:50:59:913 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:50:59:913 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:50:59:913 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:00:128 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:00:140 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:00:141 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:00:141 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:00:141 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:00:354 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:00:378 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:00:378 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:00:378 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:00:378 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:00:593 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:00:606 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:00:606 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:00:606 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:00:606 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:00:819 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:00:840 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:00:840 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:00:840 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:00:840 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:01:055 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:01:070 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:01:070 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:01:070 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:01:070 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:01:284 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:01:308 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:01:308 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:01:308 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:01:308 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:01:522 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:01:535 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:01:535 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:01:535 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:01:535 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:01:748 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:01:760 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:01:761 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:01:761 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:01:761 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:01:973 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:01:987 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:01:987 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:01:987 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:01:987 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:02:201 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:02:215 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:02:215 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:02:215 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:02:215 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:02:429 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:02:441 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:02:441 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:02:441 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:02:441 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:02:654 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:02:671 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:02:671 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:02:671 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:02:671 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:02:884 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:02:898 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:02:898 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:02:898 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:02:898 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:03:113 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:03:129 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:03:129 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:03:129 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:03:129 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:03:344 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:03:357 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:03:357 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:03:357 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:03:357 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:03:571 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:03:589 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:03:589 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:03:589 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:03:589 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:03:802 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:03:815 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:03:815 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:03:815 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:03:815 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:04:028 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:04:047 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:04:047 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:04:047 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:04:047 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:04:260 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:04:276 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:04:276 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:04:276 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:04:276 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:04:490 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:04:504 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:04:505 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:04:505 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:04:505 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:04:717 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:04:730 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:04:730 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:04:730 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:04:730 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:04:948 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:04:962 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:04:962 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:04:962 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:04:962 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:05:175 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:05:188 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:05:189 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:05:189 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:05:189 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:05:402 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:05:415 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:05:416 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:05:416 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:05:416 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:05:629 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:05:641 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:05:641 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:05:641 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:05:641 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:05:854 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:05:867 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:05:867 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:05:867 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:05:867 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:06:080 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:06:093 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:06:093 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:06:093 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:06:093 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:06:307 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:06:320 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:06:320 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:06:320 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:06:320 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:06:533 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:06:545 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:06:546 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:06:546 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:06:546 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:06:759 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:06:772 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:06:772 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:06:772 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:06:772 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:06:985 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:06:998 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:06:998 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:06:998 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:06:998 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:07:211 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:07:224 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:07:224 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:07:224 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:07:224 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:07:438 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:07:458 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:07:458 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:07:458 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:07:458 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:07:672 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:07:685 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:07:685 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:07:685 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:07:685 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:07:898 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:07:923 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:07:923 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:07:923 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:07:923 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:08:137 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:08:150 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:08:150 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:08:150 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:08:150 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:08:364 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:08:379 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:08:379 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:08:379 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:08:379 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:08:593 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:08:605 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:08:605 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:08:605 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:08:605 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:08:818 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:08:833 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:08:833 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:08:833 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:08:833 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:09:047 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:09:060 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:09:060 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:09:060 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:09:060 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:09:273 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:09:300 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:09:300 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:09:300 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:09:300 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:09:515 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:09:529 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:09:529 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:09:529 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:09:529 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:09:744 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:09:761 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:09:761 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:09:761 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:09:761 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:09:974 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:09:990 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:09:990 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:09:990 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:09:990 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:10:203 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:10:217 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:10:217 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:10:217 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:10:217 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:10:430 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:10:443 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:10:443 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:10:443 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:10:444 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:10:657 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:10:676 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:10:676 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:10:676 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:10:676 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:10:890 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:10:903 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:10:903 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:10:903 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:10:903 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:11:117 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:11:141 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:11:141 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:11:141 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:11:141 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:11:356 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:11:369 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:11:369 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:11:369 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:11:369 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:11:583 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:11:603 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:11:603 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:11:604 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:11:604 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:11:817 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:11:829 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:11:829 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:11:829 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:11:829 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:12:043 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:12:066 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:12:066 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:12:066 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:12:066 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:12:282 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:12:295 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:12:295 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:12:295 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:12:295 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:12:509 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:12:525 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:12:525 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:12:525 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:12:525 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:12:738 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:12:751 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:12:751 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:12:751 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:12:751 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:12:964 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:12:979 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:12:979 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:12:979 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:12:979 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:13:192 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:13:204 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:13:205 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:13:205 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:13:205 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:13:417 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:13:430 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:13:430 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:13:430 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:13:430 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:13:643 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:13:656 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:13:656 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:13:656 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:13:656 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:13:869 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:13:881 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:13:882 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:13:882 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:13:882 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:14:094 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:14:108 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:14:108 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:14:108 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:14:108 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:14:323 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:14:337 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:14:337 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:14:337 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:14:337 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:14:553 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:14:566 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:14:566 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:14:566 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:14:566 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:14:779 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:14:792 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:14:792 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:14:792 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:14:792 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:15:005 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:15:018 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:15:018 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:15:019 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:15:019 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:15:233 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:15:248 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:15:248 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:15:248 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:15:248 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:15:463 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:15:483 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:15:483 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:15:483 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:15:483 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:15:698 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:15:711 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:15:711 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:15:711 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:15:711 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:15:923 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:15:936 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:15:936 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:15:936 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:15:936 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:16:150 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:16:163 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:16:163 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:16:163 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:16:163 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:16:377 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:16:420 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:16:421 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:16:421 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:16:421 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:16:636 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:16:649 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:16:649 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:16:649 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:16:649 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:16:863 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:16:888 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:16:889 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:16:889 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:16:889 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:17:105 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:17:124 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:17:124 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:17:124 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:17:125 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:17:339 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:17:359 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:17:359 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:17:359 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:17:359 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:17:573 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:17:585 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:17:585 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:17:585 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:17:585 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:17:799 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:17:819 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:17:819 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:17:820 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:17:820 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:18:035 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:18:047 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:18:047 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:18:047 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:18:047 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:18:261 [b2691c50][ADB] Getting connected devices
+2024-08-27 03:51:18:277 [b2691c50][ADB] No connected devices have been detected
+2024-08-27 03:51:18:277 [b2691c50][ADB] Could not find online devices
+2024-08-27 03:51:18:277 [b2691c50][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:18:277 [b2691c50][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:18:292 [b2691c50][38;5;-168m[AndroidUiautomator2Driver@fc7a] Deleting UiAutomator2 session
+2024-08-27 03:51:18:294 [b2691c50][AppiumDriver@e391] Event 'newSessionStarted' logged at 1724730678294 (20:51:18 GMT-0700 (Pacific Daylight Time))
+2024-08-27 03:51:18:335 [b2691c50][AppiumDriver@e391] Encountered internal error running command: Error: Could not find a connected Android device in 20000ms
+    at ADB.getDevicesWithRetry (/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-adb/lib/tools/system-calls.js:331:13)
+    at AndroidUiautomator2Driver.getDeviceInfoFromCaps (/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/device/common.js:37:21)
+    at AndroidUiautomator2Driver.createSession (/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/lib/driver.ts:365:30)
+    at AppiumDriver.createSession (/opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/lib/appium.js:731:35)
+2024-08-27 03:51:18:349 [b2691c50][HTTP] <-- POST /session 500 20317 ms - 668 
+2024-08-27 03:51:18:357 [HTTP] Request idempotency key: a4b17cb8-0523-4098-809a-008948eed882
+2024-08-27 03:51:18:358 [HTTP] --> POST /session {"capabilities":{"firstMatch":[{}],"alwaysMatch":{"appium:automationName":"UiAutomator2","platformName":"Android","appium:deviceName":"Android Device","appium:autoGrantPermission":true,"appium:newCommandTimeout":600}}}
+2024-08-27 03:51:18:359 [AppiumDriver@e391] Calling AppiumDriver.createSession() with args: [null,null,{"firstMatch":[{}],"alwaysMatch":{"appium:automationName":"UiAutomator2","platformName":"Android","appium:deviceName":"Android Device","appium:autoGrantPermission":true,"appium:newCommandTimeout":600}}]
+2024-08-27 03:51:18:359 [AppiumDriver@e391] Event 'newSessionRequested' logged at 1724730678359 (20:51:18 GMT-0700 (Pacific Daylight Time))
+2024-08-27 03:51:18:360 [Appium] Attempting to find matching driver for automationName 'UiAutomator2' and platformName 'Android'
+2024-08-27 03:51:18:360 [Appium] The 'uiautomator2' driver was installed and matched caps.
+2024-08-27 03:51:18:360 [Appium] Will require it at /Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver
+2024-08-27 03:51:18:361 [Appium] Requiring driver at /Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+2024-08-27 03:51:18:361 [AppiumDriver@e391] Appium v2.11.2 creating new AndroidUiautomator2Driver (v3.7.4) session
+2024-08-27 03:51:18:361 [AppiumDriver@e391] Checking BaseDriver versions for Appium and AndroidUiautomator2Driver
+2024-08-27 03:51:18:361 [AppiumDriver@e391] Appium's BaseDriver version is 9.11.2
+2024-08-27 03:51:18:362 [AppiumDriver@e391] AndroidUiautomator2Driver's BaseDriver version is 9.11.2
+2024-08-27 03:51:18:362 [38;5;-156m[AndroidUiautomator2Driver@4cbb] undefined
+2024-08-27 03:51:18:363 [38;5;-156m[AndroidUiautomator2Driver@4cbb] Creating session with W3C capabilities: {
+  "alwaysMatch": {
+    "platformName": "Android",
+    "appium:automationName": "UiAutomator2",
+    "appium:deviceName": "Android Device",
+    "appium:autoGrantPermission": true,
+    "appium:newCommandTimeout": 600
+  },
+  "firstMatch": [
+    {}
+  ]
+}
+2024-08-27 03:51:18:367 [38;5;-156m[AndroidUiautomator2Driver@4cbb] The following provided capabilities were not recognized by this driver:
+2024-08-27 03:51:18:367 [38;5;-156m[AndroidUiautomator2Driver@4cbb]   autoGrantPermission
+2024-08-27 03:51:18:367 [4cd687ed][38;5;-156m[AndroidUiautomator2Driver@4cbb] Session created with session id: 4cd687ed-60e6-4ad9-9362-c7022a1a1ac8
+2024-08-27 03:51:18:368 [4cd687ed][ADB] Using 'adb' from '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb'
+2024-08-27 03:51:18:368 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+2024-08-27 03:51:18:390 [4cd687ed][38;5;-156m[AndroidUiautomator2Driver@4cbb] Retrieving device list
+2024-08-27 03:51:18:390 [4cd687ed][ADB] Trying to find connected Android devices
+2024-08-27 03:51:18:390 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:18:404 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:18:404 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:18:404 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:18:404 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:18:618 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:18:633 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:18:633 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:18:633 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:18:633 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:18:846 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:18:859 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:18:859 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:18:859 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:18:859 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:19:072 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:19:084 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:19:084 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:19:084 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:19:084 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:19:298 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:19:311 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:19:311 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:19:311 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:19:311 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:19:525 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:19:538 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:19:538 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:19:538 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:19:538 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:19:751 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:19:768 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:19:768 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:19:768 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:19:768 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:19:982 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:19:995 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:19:995 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:19:995 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:19:995 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:20:211 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:20:234 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:20:234 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:20:234 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:20:234 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:20:449 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:20:462 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:20:462 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:20:462 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:20:462 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:20:675 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:20:698 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:20:698 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:20:698 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:20:698 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:20:913 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:20:926 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:20:926 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:20:926 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:20:926 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:21:140 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:21:188 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:21:188 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:21:188 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:21:188 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:21:408 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:21:420 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:21:420 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:21:420 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:21:420 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:21:634 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:21:654 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:21:654 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:21:654 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:21:654 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:21:867 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:21:880 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:21:880 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:21:880 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:21:880 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:22:093 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:22:109 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:22:109 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:22:109 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:22:109 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:22:323 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:22:335 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:22:335 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:22:336 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:22:336 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:22:549 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:22:567 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:22:567 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:22:567 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:22:567 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:22:782 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:22:794 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:22:795 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:22:795 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:22:795 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:23:008 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:23:026 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:23:027 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:23:027 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:23:027 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:23:241 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:23:253 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:23:253 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:23:253 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:23:253 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:23:467 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:23:491 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:23:491 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:23:491 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:23:491 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:23:707 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:23:719 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:23:719 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:23:719 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:23:719 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:23:932 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:23:956 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:23:956 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:23:956 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:23:956 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:24:171 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:24:184 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:24:184 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:24:184 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:24:184 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:24:398 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:24:413 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:24:414 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:24:414 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:24:414 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:24:627 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:24:640 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:24:640 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:24:640 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:24:640 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:24:854 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:24:873 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:24:873 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:24:873 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:24:873 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:25:087 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:25:100 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:25:100 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:25:100 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:25:100 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:25:313 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:25:326 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:25:326 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:25:326 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:25:326 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:25:540 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:25:553 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:25:553 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:25:553 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:25:553 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:25:768 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:25:782 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:25:782 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:25:782 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:25:782 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:25:995 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:26:009 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:26:009 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:26:009 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:26:009 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:26:223 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:26:237 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:26:237 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:26:237 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:26:237 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:26:450 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:26:463 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:26:463 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:26:463 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:26:463 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:26:676 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:26:693 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:26:694 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:26:694 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:26:694 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:26:910 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:26:923 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:26:923 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:26:923 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:26:923 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:27:136 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:27:151 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:27:151 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:27:152 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:27:152 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:27:365 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:27:378 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:27:378 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:27:378 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:27:378 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:27:591 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:27:606 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:27:606 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:27:606 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:27:606 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:27:818 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:27:831 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:27:831 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:27:831 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:27:831 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:28:044 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:28:058 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:28:059 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:28:059 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:28:059 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:28:271 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:28:292 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:28:292 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:28:292 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:28:292 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:28:508 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:28:521 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:28:521 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:28:521 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:28:521 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:28:734 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:28:746 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:28:747 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:28:747 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:28:747 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:28:961 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:28:973 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:28:973 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:28:973 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:28:973 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:29:187 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:29:200 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:29:200 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:29:200 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:29:201 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:29:415 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:29:427 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:29:427 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:29:427 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:29:427 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:29:640 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:29:655 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:29:655 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:29:655 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:29:655 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:29:869 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:29:882 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:29:882 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:29:882 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:29:882 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:30:096 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:30:111 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:30:112 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:30:112 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:30:112 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:30:325 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:30:338 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:30:338 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:30:338 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:30:338 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:30:552 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:30:565 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:30:565 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:30:565 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:30:565 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:30:777 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:30:790 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:30:790 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:30:790 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:30:790 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:31:003 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:31:016 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:31:016 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:31:016 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:31:016 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:31:229 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:31:242 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:31:242 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:31:242 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:31:242 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:31:456 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:31:468 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:31:468 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:31:468 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:31:469 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:31:682 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:31:696 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:31:697 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:31:697 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:31:697 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:31:910 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:31:924 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:31:924 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:31:924 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:31:924 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:32:139 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:32:156 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:32:156 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:32:156 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:32:156 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:32:372 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:32:385 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:32:385 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:32:385 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:32:386 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:32:600 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:32:613 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:32:613 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:32:613 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:32:613 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:32:826 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:32:839 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:32:839 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:32:839 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:32:839 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:33:051 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:33:064 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:33:064 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:33:064 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:33:064 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:33:277 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:33:292 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:33:293 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:33:293 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:33:293 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:33:506 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:33:519 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:33:519 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:33:519 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:33:519 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:33:733 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:33:745 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:33:745 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:33:746 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:33:746 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:33:959 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:33:972 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:33:972 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:33:972 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:33:972 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:34:185 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:34:198 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:34:198 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:34:198 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:34:198 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:34:411 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:34:424 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:34:424 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:34:424 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:34:424 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:34:637 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:34:650 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:34:650 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:34:650 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:34:650 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:34:863 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:34:876 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:34:876 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:34:876 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:34:876 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:35:089 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:35:102 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:35:102 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:35:102 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:35:102 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:35:316 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:35:329 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:35:329 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:35:329 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:35:329 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:35:543 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:35:555 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:35:555 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:35:555 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:35:555 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:35:769 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:35:783 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:35:783 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:35:783 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:35:783 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:36:006 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:36:025 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:36:025 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:36:025 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:36:025 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:36:243 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:36:256 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:36:256 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:36:256 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:36:256 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:36:469 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:36:482 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:36:482 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:36:483 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:36:483 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:36:696 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:36:710 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:36:710 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:36:710 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:36:710 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:36:923 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:36:936 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:36:936 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:36:936 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:36:936 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:37:149 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:37:169 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:37:169 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:37:169 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:37:169 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:37:383 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:37:397 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:37:397 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:37:397 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:37:397 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:37:611 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:37:628 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:37:628 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:37:628 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:37:628 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:37:841 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:37:854 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:37:854 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:37:854 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:37:854 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:38:069 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:38:083 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:38:083 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:38:083 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:38:083 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:38:297 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:38:310 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:38:310 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:38:310 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:38:310 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:38:392 [4cd687ed][ADB] Getting connected devices
+2024-08-27 03:51:38:404 [4cd687ed][ADB] No connected devices have been detected
+2024-08-27 03:51:38:404 [4cd687ed][ADB] Could not find online devices
+2024-08-27 03:51:38:404 [4cd687ed][ADB] Reconnecting adb (target offline)
+2024-08-27 03:51:38:404 [4cd687ed][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 reconnect offline'
+2024-08-27 03:51:38:417 [4cd687ed][38;5;-156m[AndroidUiautomator2Driver@4cbb] Deleting UiAutomator2 session
+2024-08-27 03:51:38:418 [4cd687ed][AppiumDriver@e391] Event 'newSessionStarted' logged at 1724730698418 (20:51:38 GMT-0700 (Pacific Daylight Time))
+2024-08-27 03:51:38:419 [4cd687ed][AppiumDriver@e391] Encountered internal error running command: Error: Could not find a connected Android device in 20000ms
+    at ADB.getDevicesWithRetry (/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-adb/lib/tools/system-calls.js:331:13)
+    at AndroidUiautomator2Driver.getDeviceInfoFromCaps (/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-android-driver/lib/commands/device/common.js:37:21)
+    at AndroidUiautomator2Driver.createSession (/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/lib/driver.ts:365:30)
+    at AppiumDriver.createSession (/opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/lib/appium.js:731:35)
+2024-08-27 03:51:38:421 [4cd687ed][HTTP] <-- POST /session 500 20062 ms - 668 
+2024-08-27 03:53:12:132 [HTTP] Request idempotency key: 814ad84b-7aa1-4e61-8363-f6d3cda918b6
+2024-08-27 03:53:12:148 [HTTP] --> POST /session {"capabilities":{"firstMatch":[{}],"alwaysMatch":{"appium:automationName":"UiAutomator2","platformName":"Android","appium:deviceName":"Android Device","appium:autoGrantPermission":true,"appium:newCommandTimeout":600,"appium:mjpegScreenshotUrl":"http://localhost:4723/stream.mjpeg"}}}
+2024-08-27 03:53:12:152 [AppiumDriver@e391] Calling AppiumDriver.createSession() with args: [null,null,{"firstMatch":[{}],"alwaysMatch":{"appium:automationName":"UiAutomator2","platformName":"Android","appium:deviceName":"Android Device","appium:autoGrantPermission":true,"appium:newCommandTimeout":600,"appium:mjpegScreenshotUrl":"http://localhost:4723/stream.mjpeg"}}]
+2024-08-27 03:53:12:155 [AppiumDriver@e391] Event 'newSessionRequested' logged at 1724730792155 (20:53:12 GMT-0700 (Pacific Daylight Time))
+2024-08-27 03:53:12:173 [Appium] Attempting to find matching driver for automationName 'UiAutomator2' and platformName 'Android'
+2024-08-27 03:53:12:173 [Appium] The 'uiautomator2' driver was installed and matched caps.
+2024-08-27 03:53:12:174 [Appium] Will require it at /Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver
+2024-08-27 03:53:12:182 [Appium] Requiring driver at /Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+2024-08-27 03:53:12:186 [AppiumDriver@e391] Appium v2.11.2 creating new AndroidUiautomator2Driver (v3.7.4) session
+2024-08-27 03:53:12:186 [AppiumDriver@e391] Checking BaseDriver versions for Appium and AndroidUiautomator2Driver
+2024-08-27 03:53:12:186 [AppiumDriver@e391] Appium's BaseDriver version is 9.11.2
+2024-08-27 03:53:12:186 [AppiumDriver@e391] AndroidUiautomator2Driver's BaseDriver version is 9.11.2
+2024-08-27 03:53:12:194 [38;5;-185m[AndroidUiautomator2Driver@4c76] undefined
+2024-08-27 03:53:12:195 [38;5;-185m[AndroidUiautomator2Driver@4c76] Creating session with W3C capabilities: {
+  "alwaysMatch": {
+    "platformName": "Android",
+    "appium:automationName": "UiAutomator2",
+    "appium:deviceName": "Android Device",
+    "appium:autoGrantPermission": true,
+    "appium:newCommandTimeout": 600,
+    "appium:mjpegScreenshotUrl": "http://localhost:4723/stream.mjpeg"
+  },
+  "firstMatch": [
+    {}
+  ]
+}
+2024-08-27 03:53:12:206 [38;5;-185m[AndroidUiautomator2Driver@4c76] The following provided capabilities were not recognized by this driver:
+2024-08-27 03:53:12:206 [38;5;-185m[AndroidUiautomator2Driver@4c76]   autoGrantPermission
+2024-08-27 03:53:12:206 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Session created with session id: 2ac14d3e-13d8-4ce2-b23f-71d47e274081
+2024-08-27 03:53:12:208 [2ac14d3e][ADB] Using 'adb' from '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb'
+2024-08-27 03:53:12:208 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+2024-08-27 03:53:12:223 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Retrieving device list
+2024-08-27 03:53:12:223 [2ac14d3e][ADB] Trying to find connected Android devices
+2024-08-27 03:53:12:223 [2ac14d3e][ADB] Getting connected devices
+2024-08-27 03:53:12:243 [2ac14d3e][ADB] Connected devices: [{"udid":"emulator-5554","state":"device"}]
+2024-08-27 03:53:12:245 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Using device: emulator-5554
+2024-08-27 03:53:12:246 [2ac14d3e][ADB] Using 'adb' from '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb'
+2024-08-27 03:53:12:246 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+2024-08-27 03:53:12:260 [2ac14d3e][ADB] Setting device id to emulator-5554
+2024-08-27 03:53:12:261 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Neither 'app' nor 'appPackage' was set. Starting UiAutomator2 without the target application
+2024-08-27 03:53:12:262 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.sdk'
+2024-08-27 03:53:12:297 [2ac14d3e][ADB] Current device property 'ro.build.version.sdk': 35
+2024-08-27 03:53:12:298 [2ac14d3e][ADB] Getting device platform version
+2024-08-27 03:53:12:298 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.release'
+2024-08-27 03:53:12:329 [2ac14d3e][ADB] Current device property 'ro.build.version.release': 15
+2024-08-27 03:53:12:329 [2ac14d3e][ADB] Device API level: 35
+2024-08-27 03:53:12:330 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Relaxing hidden api policy
+2024-08-27 03:53:12:330 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'settings put global hidden_api_policy_pre_p_apps 1;settings put global hidden_api_policy_p_apps 1;settings put global hidden_api_policy 1''
+2024-08-27 03:53:12:331 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] No app sent in, not parsing package/activity
+2024-08-27 03:53:12:334 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 wait-for-device'
+2024-08-27 03:53:12:349 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell echo ping'
+2024-08-27 03:53:12:374 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Pushing settings apk to the device...
+2024-08-27 03:53:12:375 [2ac14d3e][ADB] Getting package info for 'io.appium.settings'
+2024-08-27 03:53:12:375 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.settings'
+2024-08-27 03:53:12:829 [2ac14d3e][ADB] Using 'aapt2' from '/Users/wasifsarker/Library/Android/sdk/build-tools/35.0.0/aapt2'
+2024-08-27 03:53:12:829 [2ac14d3e][ADB] Reading package manifest: '/Users/wasifsarker/Library/Android/sdk/build-tools/35.0.0/aapt2 dump badging /Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk'
+2024-08-27 03:53:12:947 [2ac14d3e][ADB] The version name of the installed 'io.appium.settings' is greater or equal to the application version name ('5.12.7' >= '5.12.7')
+2024-08-27 03:53:12:949 [2ac14d3e][ADB] There is no need to install/upgrade '/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk'
+2024-08-27 03:53:12:951 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2024-08-27 03:53:13:519 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell cmd notification allow_listener io.appium.settings/.NLService'
+2024-08-27 03:53:13:521 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell appops set io.appium.settings PROJECT_MEDIA allow'
+2024-08-27 03:53:14:021 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2024-08-27 03:53:14:102 [2ac14d3e][SettingsApp] Starting Appium Settings app
+2024-08-27 03:53:14:105 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am start -n io.appium.settings/.Settings -a android.intent.action.MAIN -c android.intent.category.LAUNCHER'
+2024-08-27 03:53:15:891 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2024-08-27 03:53:18:407 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2024-08-27 03:53:18:863 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2024-08-27 03:53:19:524 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2024-08-27 03:53:19:644 [2ac14d3e][Logcat] Starting logs capture with command: /Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 logcat -v threadtime
+2024-08-27 03:53:19:788 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Forwarding UiAutomator2 Server port 6790 to local port 8200
+2024-08-27 03:53:19:789 [2ac14d3e][ADB] Forwarding system: 8200 to device: 6790
+2024-08-27 03:53:19:789 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 forward tcp:8200 tcp:6790'
+2024-08-27 03:53:19:807 [2ac14d3e][ADB] Getting package info for 'io.appium.uiautomator2.server'
+2024-08-27 03:53:19:808 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.uiautomator2.server'
+2024-08-27 03:53:19:808 [2ac14d3e][ADB] Getting install status for io.appium.uiautomator2.server.test
+2024-08-27 03:53:19:808 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] No app capability. Assuming it is already on the device
+2024-08-27 03:53:19:809 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell cmd package list packages'
+2024-08-27 03:53:21:408 [2ac14d3e][ADB] Reading package manifest: '/Users/wasifsarker/Library/Android/sdk/build-tools/35.0.0/aapt2 dump badging /Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.20.apk'
+2024-08-27 03:53:21:419 [2ac14d3e][ADB] 'io.appium.uiautomator2.server.test' is installed
+2024-08-27 03:53:21:533 [2ac14d3e][ADB] The version name of the installed 'io.appium.uiautomator2.server' is greater or equal to the application version name ('7.0.20' >= '7.0.20')
+2024-08-27 03:53:21:534 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Server packages status: [{"installState":"sameVersionInstalled","appPath":"/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.20.apk","appId":"io.appium.uiautomator2.server"},{"installState":"sameVersionInstalled","appPath":"/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk","appId":"io.appium.uiautomator2.server.test"}]
+2024-08-27 03:53:21:534 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Server packages are not going to be (re)installed
+2024-08-27 03:53:21:535 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Waiting up to 30000ms for services to be available
+2024-08-27 03:53:21:536 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm list instrumentation'
+2024-08-27 03:53:21:784 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Instrumentation target 'io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner' is available
+2024-08-27 03:53:21:791 [2ac14d3e][ADB] Adding packages ["io.appium.settings","io.appium.uiautomator2.server","io.appium.uiautomator2.server.test"] to Doze whitelist
+2024-08-27 03:53:21:792 [2ac14d3e][ADB] Got the following command chunks to execute: [["dumpsys","deviceidle","whitelist","+io.appium.settings",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server.test",";"]]
+2024-08-27 03:53:21:792 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys deviceidle whitelist +io.appium.settings ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server.test ;'
+2024-08-27 03:53:22:055 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Performing shallow cleanup of automation leftovers
+2024-08-27 03:53:22:174 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] No obsolete sessions have been detected (socket hang up)
+2024-08-27 03:53:22:174 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server'
+2024-08-27 03:53:22:175 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server.test'
+2024-08-27 03:53:22:581 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Starting UIAutomator2 server 7.0.20
+2024-08-27 03:53:22:581 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Using UIAutomator2 server from '/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.20.apk' and test from '/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk'
+2024-08-27 03:53:22:582 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Waiting up to 30000ms for UiAutomator2 to be online...
+2024-08-27 03:53:22:582 [2ac14d3e][ADB] Creating ADB subprocess with args: ["-P","5037","-s","emulator-5554","shell","am","instrument","-w","-e","disableAnalytics","true","io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner"]
+2024-08-27 03:53:22:588 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:22:590 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:22:645 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:23:650 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:23:651 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:23:678 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:24:682 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:24:682 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:24:687 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:25:694 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:25:695 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:25:705 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:26:710 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:26:711 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:26:719 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:27:721 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:27:721 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:27:727 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:28:731 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:28:732 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:28:743 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:29:745 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:29:746 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:30:045 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:31:047 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:31:047 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:31:054 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:32:060 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:32:061 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:32:070 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:33:074 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:33:075 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:33:090 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:34:116 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:34:119 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:34:133 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:35:137 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:35:137 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:35:152 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:36:155 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:36:156 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:36:166 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:37:168 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:37:168 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:37:173 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:38:191 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:38:193 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:38:211 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:39:218 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:39:218 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:39:228 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:40:230 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:40:230 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:40:233 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:41:238 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:41:239 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:41:248 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:42:250 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:42:251 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:42:253 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:42:320 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] [Instrumentation] 
+2024-08-27 03:53:43:258 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:43:258 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:43:289 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:44:301 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:44:303 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:44:317 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:45:322 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:45:323 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:45:341 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] socket hang up
+2024-08-27 03:53:46:343 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:46:343 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:46:607 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Got response with status 200: {"sessionId":"None","value":{"message":"UiAutomator2 Server is ready to accept commands","ready":true}}
+2024-08-27 03:53:46:608 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] The initialization of the instrumentation process took 24026ms
+2024-08-27 03:53:46:608 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/session' to command name 'createSession'
+2024-08-27 03:53:46:608 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [POST /session] to [POST http://127.0.0.1:8200/session] with body: {"capabilities":{"firstMatch":[{"platformName":"Android","automationName":"UiAutomator2","deviceName":"emulator-5554","autoGrantPermission":true,"newCommandTimeout":600,"mjpegScreenshotUrl":"http://localhost:4723/stream.mjpeg","platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","automationName":"UiAutomator2","deviceName":"Android Device","autoGrantPermission":true,"newCommandTimeout":600,"mjpegScreenshotUrl":"http://localhost:4723/stream.mjpeg"},"deviceUDID":"emulator-5554"}],"alwaysMatch":{}}}
+2024-08-27 03:53:46:885 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Got response with status 200: {"sessionId":"c16bf547-a649-4b16-8385-5cc61a4f2d6a","value":{"capabilities":{"firstMatch":[{"platformName":"Android","automationName":"UiAutomator2","deviceName":"emulator-5554","autoGrantPermission":true,"newCommandTimeout":600,"mjpegScreenshotUrl":"http://localhost:4723/stream.mjpeg","platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","automationName":"UiAutomator2","deviceName":"Android Device","autoGrantPermission":true,"newCommandTimeout":600,"mjpegScreenshotUrl":"http://localhost:4723/stream.mjpeg"},"deviceUDID":"emulator-5554"}],"alwaysMatch":{}},"sessionId":"c16bf547-a649-4b16-8385-5cc61a4f2d6a"}}
+2024-08-27 03:53:46:885 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Determined the downstream protocol as 'W3C'
+2024-08-27 03:53:46:914 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /appium/device/pixel_ratio] to [GET http://127.0.0.1:8200/session/c16bf547-a649-4b16-8385-5cc61a4f2d6a/appium/device/pixel_ratio] with no body
+2024-08-27 03:53:46:916 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/appium/device/system_bars' to command name 'getSystemBars'
+2024-08-27 03:53:46:917 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /appium/device/system_bars] to [GET http://127.0.0.1:8200/session/c16bf547-a649-4b16-8385-5cc61a4f2d6a/appium/device/system_bars] with no body
+2024-08-27 03:53:46:917 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/window/current/size' to command name 'getWindowSize'
+2024-08-27 03:53:46:918 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8200/session/c16bf547-a649-4b16-8385-5cc61a4f2d6a/window/current/size] with no body
+2024-08-27 03:53:46:922 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [GET /appium/device/info] to [GET http://127.0.0.1:8200/session/c16bf547-a649-4b16-8385-5cc61a4f2d6a/appium/device/info] with no body
+2024-08-27 03:53:46:923 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window'
+2024-08-27 03:53:46:924 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys power'
+2024-08-27 03:53:46:974 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Got response with status 200: {"sessionId":"c16bf547-a649-4b16-8385-5cc61a4f2d6a","value":2.625}
+2024-08-27 03:53:47:057 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Got response with status 200: {"sessionId":"c16bf547-a649-4b16-8385-5cc61a4f2d6a","value":{"statusBar":74}}
+2024-08-27 03:53:47:063 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Got response with status 200: {"sessionId":"c16bf547-a649-4b16-8385-5cc61a4f2d6a","value":{"height":1840,"width":2208}}
+2024-08-27 03:53:47:629 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Got response with status 200: {"sessionId":"c16bf547-a649-4b16-8385-5cc61a4f2d6a","value":{"androidId":"0e3da46aaa93af95","apiVersion":"35","bluetooth":{"state":"ON"},"brand":"google","carrierName":"T-Mobile","displayDensity":420,"locale":"en_US","manufacturer":"Google","model":"sdk_gphone64_arm64","networks":[{"capabilities":{"SSID":null,"linkDownBandwidthKbps":30000,"linkUpstreamBandwidthKbps":12000,"networkCapabilities":"NET_CAPABILITY_NOT_METERED,NET_CAPABILITY_INTERNET,NET_CAPABILITY_NOT_RESTRICTED,NET_CAPABILITY_TRUSTED,NET_CAPABILITY_NOT_VPN,NET_CAPABILITY_VALIDATED,NET_CAPABILITY_NOT_ROAMING,NET_CAPABILITY_FOREGROUND,NET_CAPABILITY_NOT_CONGESTED,NET_CAPABILITY_NOT_SUSPENDED","signalStrength":-50,"transportTypes":"TRANSPORT_WIFI"},"detailedState":"CONNECTED","extraInfo":"","isAvailable":true,"isConnected":true,"isFailover":false,"isRoaming":false,"state":"CONNECTED","subtype":-1,"subtypeName":"","type":1,"typeName":"WIFI"},{"capabilities":{"SSID":null,"linkDownBandwidthKbps":14,"linkUpstreamBandwidthKbps":14,"networkCapabilities...
+2024-08-27 03:53:47:669 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Screen already unlocked, doing nothing
+2024-08-27 03:53:47:669 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Starting MJPEG stream reading URL: 'http://localhost:4723/stream.mjpeg'
+2024-08-27 03:53:47:670 [2ac14d3e][Support] Loading local package 'mjpeg-consumer'
+2024-08-27 03:53:47:672 [2ac14d3e][Support] Failed to load local package 'mjpeg-consumer': Cannot find module 'mjpeg-consumer'
+Require stack:
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/build/lib/node.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/build/lib/mjpeg.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/build/lib/index.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/index.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/build/lib/logsink.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/build/lib/main.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/index.js
+2024-08-27 03:53:47:672 [2ac14d3e][Support] Loading global package '/Users/wasifsarker/jake/mobileadapt/deploy/lib/node_modules/mjpeg-consumer'
+2024-08-27 03:53:47:673 [2ac14d3e][Support] Failed to load global package 'mjpeg-consumer': Cannot find module '/Users/wasifsarker/jake/mobileadapt/deploy/lib/node_modules/mjpeg-consumer'
+Require stack:
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/build/lib/node.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/build/lib/mjpeg.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/build/lib/index.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/index.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/build/lib/logsink.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/build/lib/main.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/index.js
+2024-08-27 03:53:47:673 [2ac14d3e][Support] Linking package 'mjpeg-consumer'
+2024-08-27 03:53:55:003 [2ac14d3e][Support] Retrying load of linked package 'mjpeg-consumer'
+2024-08-27 03:53:55:007 [2ac14d3e][Support] Unable to load package 'mjpeg-consumer': Cannot find module 'mjpeg-consumer'
+Require stack:
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/build/lib/node.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/build/lib/mjpeg.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/build/lib/index.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/index.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/build/lib/logsink.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/build/lib/main.js
+- /opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/index.js
+2024-08-27 03:53:55:008 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Deleting UiAutomator2 session
+2024-08-27 03:53:55:011 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Deleting UiAutomator2 server session
+2024-08-27 03:53:55:013 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Matched '/' to command name 'deleteSession'
+2024-08-27 03:53:55:014 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Proxying [DELETE /] to [DELETE http://127.0.0.1:8200/session/c16bf547-a649-4b16-8385-5cc61a4f2d6a] with no body
+2024-08-27 03:53:55:106 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Got response with status 200: {"sessionId":"c16bf547-a649-4b16-8385-5cc61a4f2d6a","value":null}
+2024-08-27 03:53:55:110 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] [Instrumentation] io.appium.uiautomator2.server.test.AppiumUiAutomator2Server:
+2024-08-27 03:53:55:111 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] [Instrumentation] The process has exited with code null, signal SIGTERM
+2024-08-27 03:53:55:114 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings/.recorder.RecorderService'
+2024-08-27 03:53:55:118 [2ac14d3e][ADB] Removing forwarded port socket connection: 8200 
+2024-08-27 03:53:55:120 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 forward --remove tcp:8200'
+2024-08-27 03:53:55:160 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Restoring hidden api policy to the device default configuration
+2024-08-27 03:53:55:161 [2ac14d3e][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'settings delete global hidden_api_policy_pre_p_apps;settings delete global hidden_api_policy_p_apps;settings delete global hidden_api_policy''
+2024-08-27 03:53:55:618 [2ac14d3e][38;5;-185m[AndroidUiautomator2Driver@4c76] Closing MJPEG stream
+2024-08-27 03:53:55:618 [2ac14d3e][Logcat] Stopping logcat capture
+2024-08-27 03:53:55:620 [2ac14d3e][AppiumDriver@e391] Event 'newSessionStarted' logged at 1724730835620 (20:53:55 GMT-0700 (Pacific Daylight Time))
+2024-08-27 03:53:55:625 [2ac14d3e][AppiumDriver@e391] Encountered internal error running command: Error: mjpeg-consumer module is required to use MJPEG-over-HTTP features. Please install it first (npm i -g mjpeg-consumer) and restart Appium.
+    at initMJpegConsumer (/opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/lib/mjpeg.js:22:11)
+    at MJpegStream.start (/opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/node_modules/@appium/support/lib/mjpeg.js:116:5)
+    at AndroidUiautomator2Driver.createSession (/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/lib/driver.ts:412:9)
+    at AppiumDriver.createSession (/opt/homebrew/Cellar/appium/2.11.2/libexec/lib/node_modules/appium/lib/appium.js:731:35)
+2024-08-27 03:53:55:627 [2ac14d3e][HTTP] <-- POST /session 500 43480 ms - 836 
+2024-08-27 03:53:55:647 [HTTP] Request idempotency key: 9e36c6fc-8171-4cf9-a57b-10009cc22365
+2024-08-27 03:53:55:649 [HTTP] --> POST /session {"capabilities":{"firstMatch":[{}],"alwaysMatch":{"appium:automationName":"UiAutomator2","platformName":"Android","appium:deviceName":"Android Device","appium:autoGrantPermission":true,"appium:newCommandTimeout":600}}}
+2024-08-27 03:53:55:650 [AppiumDriver@e391] Calling AppiumDriver.createSession() with args: [null,null,{"firstMatch":[{}],"alwaysMatch":{"appium:automationName":"UiAutomator2","platformName":"Android","appium:deviceName":"Android Device","appium:autoGrantPermission":true,"appium:newCommandTimeout":600}}]
+2024-08-27 03:53:55:651 [AppiumDriver@e391] Event 'newSessionRequested' logged at 1724730835650 (20:53:55 GMT-0700 (Pacific Daylight Time))
+2024-08-27 03:53:55:656 [Appium] Attempting to find matching driver for automationName 'UiAutomator2' and platformName 'Android'
+2024-08-27 03:53:55:656 [Appium] The 'uiautomator2' driver was installed and matched caps.
+2024-08-27 03:53:55:656 [Appium] Will require it at /Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver
+2024-08-27 03:53:55:662 [Appium] Requiring driver at /Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/build/index.js
+2024-08-27 03:53:55:662 [AppiumDriver@e391] Appium v2.11.2 creating new AndroidUiautomator2Driver (v3.7.4) session
+2024-08-27 03:53:55:662 [AppiumDriver@e391] Checking BaseDriver versions for Appium and AndroidUiautomator2Driver
+2024-08-27 03:53:55:662 [AppiumDriver@e391] Appium's BaseDriver version is 9.11.2
+2024-08-27 03:53:55:662 [AppiumDriver@e391] AndroidUiautomator2Driver's BaseDriver version is 9.11.2
+2024-08-27 03:53:55:665 [38;5;-22m[AndroidUiautomator2Driver@c4ce] undefined
+2024-08-27 03:53:55:666 [38;5;-22m[AndroidUiautomator2Driver@c4ce] Creating session with W3C capabilities: {
+  "alwaysMatch": {
+    "platformName": "Android",
+    "appium:automationName": "UiAutomator2",
+    "appium:deviceName": "Android Device",
+    "appium:autoGrantPermission": true,
+    "appium:newCommandTimeout": 600
+  },
+  "firstMatch": [
+    {}
+  ]
+}
+2024-08-27 03:53:55:670 [38;5;-22m[AndroidUiautomator2Driver@c4ce] The following provided capabilities were not recognized by this driver:
+2024-08-27 03:53:55:670 [38;5;-22m[AndroidUiautomator2Driver@c4ce]   autoGrantPermission
+2024-08-27 03:53:55:671 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Session created with session id: cb3b8338-c8ff-4db2-95af-0365fffbe131
+2024-08-27 03:53:55:672 [cb3b8338][ADB] Using 'adb' from '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb'
+2024-08-27 03:53:55:672 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+2024-08-27 03:53:55:690 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Retrieving device list
+2024-08-27 03:53:55:691 [cb3b8338][ADB] Trying to find connected Android devices
+2024-08-27 03:53:55:691 [cb3b8338][ADB] Getting connected devices
+2024-08-27 03:53:55:711 [cb3b8338][ADB] Connected devices: [{"udid":"emulator-5554","state":"device"}]
+2024-08-27 03:53:55:712 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Using device: emulator-5554
+2024-08-27 03:53:55:712 [cb3b8338][ADB] Using 'adb' from '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb'
+2024-08-27 03:53:55:713 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 start-server'
+2024-08-27 03:53:55:733 [cb3b8338][ADB] Setting device id to emulator-5554
+2024-08-27 03:53:55:733 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Neither 'app' nor 'appPackage' was set. Starting UiAutomator2 without the target application
+2024-08-27 03:53:55:733 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.sdk'
+2024-08-27 03:53:55:792 [cb3b8338][ADB] Current device property 'ro.build.version.sdk': 35
+2024-08-27 03:53:55:792 [cb3b8338][ADB] Getting device platform version
+2024-08-27 03:53:55:792 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell getprop ro.build.version.release'
+2024-08-27 03:53:55:839 [cb3b8338][ADB] Current device property 'ro.build.version.release': 15
+2024-08-27 03:53:55:839 [cb3b8338][ADB] Device API level: 35
+2024-08-27 03:53:55:839 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Relaxing hidden api policy
+2024-08-27 03:53:55:840 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell 'settings put global hidden_api_policy_pre_p_apps 1;settings put global hidden_api_policy_p_apps 1;settings put global hidden_api_policy 1''
+2024-08-27 03:53:55:841 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] No app sent in, not parsing package/activity
+2024-08-27 03:53:55:841 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 wait-for-device'
+2024-08-27 03:53:55:862 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell echo ping'
+2024-08-27 03:53:55:911 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Pushing settings apk to the device...
+2024-08-27 03:53:55:912 [cb3b8338][ADB] Getting package info for 'io.appium.settings'
+2024-08-27 03:53:55:912 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.settings'
+2024-08-27 03:53:56:406 [cb3b8338][ADB] Using 'aapt2' from '/Users/wasifsarker/Library/Android/sdk/build-tools/35.0.0/aapt2'
+2024-08-27 03:53:56:406 [cb3b8338][ADB] Reading package manifest: '/Users/wasifsarker/Library/Android/sdk/build-tools/35.0.0/aapt2 dump badging /Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk'
+2024-08-27 03:53:56:458 [cb3b8338][ADB] The version name of the installed 'io.appium.settings' is greater or equal to the application version name ('5.12.7' >= '5.12.7')
+2024-08-27 03:53:56:458 [cb3b8338][ADB] There is no need to install/upgrade '/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/io.appium.settings/apks/settings_apk-debug.apk'
+2024-08-27 03:53:56:459 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys activity services io.appium.settings'
+2024-08-27 03:53:56:758 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] io.appium.settings is already running. There is no need to reset its permissions.
+2024-08-27 03:53:56:759 [cb3b8338][Logcat] Starting logs capture with command: /Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 logcat -v threadtime
+2024-08-27 03:53:56:848 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Forwarding UiAutomator2 Server port 6790 to local port 8200
+2024-08-27 03:53:56:851 [cb3b8338][ADB] Forwarding system: 8200 to device: 6790
+2024-08-27 03:53:56:851 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 forward tcp:8200 tcp:6790'
+2024-08-27 03:53:56:880 [cb3b8338][ADB] Getting package info for 'io.appium.uiautomator2.server'
+2024-08-27 03:53:56:880 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys package io.appium.uiautomator2.server'
+2024-08-27 03:53:56:881 [cb3b8338][ADB] Getting install status for io.appium.uiautomator2.server.test
+2024-08-27 03:53:56:882 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] No app capability. Assuming it is already on the device
+2024-08-27 03:53:56:882 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell cmd package list packages'
+2024-08-27 03:53:57:745 [cb3b8338][ADB] 'io.appium.uiautomator2.server.test' is installed
+2024-08-27 03:53:57:916 [cb3b8338][ADB] Reading package manifest: '/Users/wasifsarker/Library/Android/sdk/build-tools/35.0.0/aapt2 dump badging /Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.20.apk'
+2024-08-27 03:53:58:006 [cb3b8338][ADB] The version name of the installed 'io.appium.uiautomator2.server' is greater or equal to the application version name ('7.0.20' >= '7.0.20')
+2024-08-27 03:53:58:007 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Server packages status: [{"installState":"sameVersionInstalled","appPath":"/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.20.apk","appId":"io.appium.uiautomator2.server"},{"installState":"sameVersionInstalled","appPath":"/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk","appId":"io.appium.uiautomator2.server.test"}]
+2024-08-27 03:53:58:007 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Server packages are not going to be (re)installed
+2024-08-27 03:53:58:007 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Waiting up to 30000ms for services to be available
+2024-08-27 03:53:58:008 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell pm list instrumentation'
+2024-08-27 03:53:58:144 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Instrumentation target 'io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner' is available
+2024-08-27 03:53:58:146 [cb3b8338][ADB] Adding packages ["io.appium.settings","io.appium.uiautomator2.server","io.appium.uiautomator2.server.test"] to Doze whitelist
+2024-08-27 03:53:58:146 [cb3b8338][ADB] Got the following command chunks to execute: [["dumpsys","deviceidle","whitelist","+io.appium.settings",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server",";","dumpsys","deviceidle","whitelist","+io.appium.uiautomator2.server.test",";"]]
+2024-08-27 03:53:58:146 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys deviceidle whitelist +io.appium.settings ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server ; dumpsys deviceidle whitelist +io.appium.uiautomator2.server.test ;'
+2024-08-27 03:53:58:324 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Performing shallow cleanup of automation leftovers
+2024-08-27 03:53:58:333 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] No obsolete sessions have been detected (socket hang up)
+2024-08-27 03:53:58:333 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server'
+2024-08-27 03:53:58:334 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell am force-stop io.appium.uiautomator2.server.test'
+2024-08-27 03:53:59:879 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Starting UIAutomator2 server 7.0.20
+2024-08-27 03:53:59:879 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Using UIAutomator2 server from '/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-v7.0.20.apk' and test from '/Users/wasifsarker/.appium/node_modules/appium-uiautomator2-driver/node_modules/appium-uiautomator2-server/apks/appium-uiautomator2-server-debug-androidTest.apk'
+2024-08-27 03:53:59:879 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Waiting up to 30000ms for UiAutomator2 to be online...
+2024-08-27 03:53:59:880 [cb3b8338][ADB] Creating ADB subprocess with args: ["-P","5037","-s","emulator-5554","shell","am","instrument","-w","-e","disableAnalytics","true","io.appium.uiautomator2.server.test/androidx.test.runner.AndroidJUnitRunner"]
+2024-08-27 03:53:59:884 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:53:59:885 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:53:59:904 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:00:906 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:00:906 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:00:913 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:01:917 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:01:917 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:01:922 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:02:927 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:02:929 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:02:948 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:03:950 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:03:950 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:03:957 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:04:961 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:04:961 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:04:967 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:05:970 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:05:971 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:06:000 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:07:007 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:07:010 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:07:020 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:08:036 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:08:040 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:08:161 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:09:168 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:09:170 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:09:235 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:10:241 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:10:242 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:10:252 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:11:257 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:11:258 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:11:285 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:12:287 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:12:288 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:12:297 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:13:300 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:13:301 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:13:308 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:14:311 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:14:311 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:14:328 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:15:331 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:15:331 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:15:344 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:16:347 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:16:347 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:16:351 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:17:354 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:17:355 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:17:371 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:18:447 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:18:448 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:18:514 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:19:518 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:19:518 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:19:523 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:20:529 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:20:530 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:20:541 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:21:545 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:21:546 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:21:578 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:22:538 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] [Instrumentation] 
+2024-08-27 03:54:22:579 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:22:580 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:22:587 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:23:593 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:23:595 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:23:646 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:24:649 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:24:650 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:24:657 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:25:659 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:25:660 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:25:672 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:26:677 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:26:678 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:26:687 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] socket hang up
+2024-08-27 03:54:27:689 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/status' to command name 'getStatus'
+2024-08-27 03:54:27:689 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /status] to [GET http://127.0.0.1:8200/status] with no body
+2024-08-27 03:54:27:870 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Got response with status 200: {"sessionId":"None","value":{"message":"UiAutomator2 Server is ready to accept commands","ready":true}}
+2024-08-27 03:54:27:871 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] The initialization of the instrumentation process took 27992ms
+2024-08-27 03:54:27:872 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/session' to command name 'createSession'
+2024-08-27 03:54:27:872 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [POST /session] to [POST http://127.0.0.1:8200/session] with body: {"capabilities":{"firstMatch":[{"platformName":"Android","automationName":"UiAutomator2","deviceName":"emulator-5554","autoGrantPermission":true,"newCommandTimeout":600,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","automationName":"UiAutomator2","deviceName":"Android Device","autoGrantPermission":true,"newCommandTimeout":600},"deviceUDID":"emulator-5554"}],"alwaysMatch":{}}}
+2024-08-27 03:54:28:346 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Got response with status 200: {"sessionId":"be387426-1ef1-437c-aad1-9fa024faf959","value":{"capabilities":{"firstMatch":[{"platformName":"Android","automationName":"UiAutomator2","deviceName":"emulator-5554","autoGrantPermission":true,"newCommandTimeout":600,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","automationName":"UiAutomator2","deviceName":"Android Device","autoGrantPermission":true,"newCommandTimeout":600},"deviceUDID":"emulator-5554"}],"alwaysMatch":{}},"sessionId":"be387426-1ef1-437c-aad1-9fa024faf959"}}
+2024-08-27 03:54:28:346 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Determined the downstream protocol as 'W3C'
+2024-08-27 03:54:28:398 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /appium/device/pixel_ratio] to [GET http://127.0.0.1:8200/session/be387426-1ef1-437c-aad1-9fa024faf959/appium/device/pixel_ratio] with no body
+2024-08-27 03:54:28:400 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/appium/device/system_bars' to command name 'getSystemBars'
+2024-08-27 03:54:28:400 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /appium/device/system_bars] to [GET http://127.0.0.1:8200/session/be387426-1ef1-437c-aad1-9fa024faf959/appium/device/system_bars] with no body
+2024-08-27 03:54:28:401 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/window/current/size' to command name 'getWindowSize'
+2024-08-27 03:54:28:401 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /window/current/size] to [GET http://127.0.0.1:8200/session/be387426-1ef1-437c-aad1-9fa024faf959/window/current/size] with no body
+2024-08-27 03:54:28:409 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [GET /appium/device/info] to [GET http://127.0.0.1:8200/session/be387426-1ef1-437c-aad1-9fa024faf959/appium/device/info] with no body
+2024-08-27 03:54:28:410 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys window'
+2024-08-27 03:54:28:411 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell dumpsys power'
+2024-08-27 03:54:28:847 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Got response with status 200: {"sessionId":"be387426-1ef1-437c-aad1-9fa024faf959","value":2.625}
+2024-08-27 03:54:29:024 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Got response with status 200: {"sessionId":"be387426-1ef1-437c-aad1-9fa024faf959","value":{"height":1840,"width":2208}}
+2024-08-27 03:54:29:026 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Got response with status 200: {"sessionId":"be387426-1ef1-437c-aad1-9fa024faf959","value":{"statusBar":74}}
+2024-08-27 03:54:30:112 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Screen is locked, trying to unlock
+2024-08-27 03:54:30:113 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Neither 'unlockType' nor 'unlockKey' capability is provided. Assuming the device is locked with a simple lock screen.
+2024-08-27 03:54:30:113 [cb3b8338][ADB] Waking up the device to dismiss the keyguard
+2024-08-27 03:54:30:114 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell input keyevent 26'
+2024-08-27 03:54:30:502 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Got response with status 200: {"sessionId":"be387426-1ef1-437c-aad1-9fa024faf959","value":{"androidId":"0e3da46aaa93af95","apiVersion":"35","bluetooth":{"state":"ON"},"brand":"google","carrierName":"T-Mobile","displayDensity":420,"locale":"en_US","manufacturer":"Google","model":"sdk_gphone64_arm64","networks":[{"capabilities":{"SSID":null,"linkDownBandwidthKbps":30000,"linkUpstreamBandwidthKbps":12000,"networkCapabilities":"NET_CAPABILITY_NOT_METERED,NET_CAPABILITY_INTERNET,NET_CAPABILITY_NOT_RESTRICTED,NET_CAPABILITY_TRUSTED,NET_CAPABILITY_NOT_VPN,NET_CAPABILITY_VALIDATED,NET_CAPABILITY_NOT_ROAMING,NET_CAPABILITY_FOREGROUND,NET_CAPABILITY_NOT_CONGESTED,NET_CAPABILITY_NOT_SUSPENDED","signalStrength":-50,"transportTypes":"TRANSPORT_WIFI"},"detailedState":"CONNECTED","extraInfo":"","isAvailable":true,"isConnected":true,"isFailover":false,"isRoaming":false,"state":"CONNECTED","subtype":-1,"subtypeName":"","type":1,"typeName":"WIFI"},{"capabilities":{"SSID":null,"linkDownBandwidthKbps":4300,"linkUpstreamBandwidthKbps":1800,"networkCapabili...
+2024-08-27 03:54:30:566 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell input keyevent 224'
+2024-08-27 03:54:30:694 [cb3b8338][ADB] Running '/Users/wasifsarker/Library/Android/sdk/platform-tools/adb -P 5037 -s emulator-5554 shell wm dismiss-keyguard'
+2024-08-27 03:54:30:763 [cb3b8338][AppiumDriver@e391] New AndroidUiautomator2Driver session created successfully, session cb3b8338-c8ff-4db2-95af-0365fffbe131 added to master session list
+2024-08-27 03:54:30:764 [cb3b8338][AppiumDriver@e391] Event 'newSessionStarted' logged at 1724730870764 (20:54:30 GMT-0700 (Pacific Daylight Time))
+2024-08-27 03:54:30:764 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Cached the protocol value 'W3C' for the new session cb3b8338-c8ff-4db2-95af-0365fffbe131
+2024-08-27 03:54:30:765 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Responding to client with driver.createSession() result: {"capabilities":{"platformName":"Android","automationName":"UiAutomator2","deviceName":"emulator-5554","autoGrantPermission":true,"newCommandTimeout":600,"platform":"LINUX","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":false,"warnings":{},"desired":{"platformName":"Android","automationName":"UiAutomator2","deviceName":"Android Device","autoGrantPermission":true,"newCommandTimeout":600},"deviceUDID":"emulator-5554","pixelRatio":"2.625","statBarHeight":74,"viewportRect":{"left":0,"top":74,"width":2208,"height":1766},"deviceApiLevel":35,"platformVersion":"15","deviceManufacturer":"Google","deviceModel":"sdk_gphone64_arm64","deviceScreenSize":"2208x1840","deviceScreenDensity":420}}
+2024-08-27 03:54:30:787 [cb3b8338][HTTP] <-- POST /session 200 35136 ms - 856 
+2024-08-27 03:54:30:883 [cb3b8338][HTTP] --> POST /session/cb3b8338-c8ff-4db2-95af-0365fffbe131/appium/settings {"settings":{"waitForIdleTimeout":0,"shouldWaitForQuiescence":false,"maxTypingFrequency":60}}
+2024-08-27 03:54:30:890 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Calling AppiumDriver.updateSettings() with args: [{"waitForIdleTimeout":0,"shouldWaitForQuiescence":false,"maxTypingFrequency":60},"cb3b8338-c8ff-4db2-95af-0365fffbe131"]
+2024-08-27 03:54:30:895 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Matched '/appium/settings' to command name 'updateSettings'
+2024-08-27 03:54:30:895 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Proxying [POST /appium/settings] to [POST http://127.0.0.1:8200/session/be387426-1ef1-437c-aad1-9fa024faf959/appium/settings] with body: {"settings":{"waitForIdleTimeout":0,"shouldWaitForQuiescence":false,"maxTypingFrequency":60}}
+2024-08-27 03:54:30:933 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Got response with status 200: {"sessionId":"be387426-1ef1-437c-aad1-9fa024faf959","value":null}
+2024-08-27 03:54:30:934 [cb3b8338][38;5;-22m[AndroidUiautomator2Driver@c4ce] Responding to client with driver.updateSettings() result: null
+2024-08-27 03:54:30:935 [cb3b8338][HTTP] <-- POST /session/cb3b8338-c8ff-4db2-95af-0365fffbe131/appium/settings 200 51 ms - 14 
