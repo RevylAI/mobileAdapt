@@ -1,8 +1,5 @@
-appium-python-client  # Core Appium client for Python
-loguru  # Improved logging
-lxml  # XML and HTML processing
-numpy  # Numerical computing (often used for data processing)
-attrs  # Classes without boilerplate
-str2bool  # Convert string to boolean
-fastapi  # FastAPI framework
-uvicorn  # ASGI server for FastAPI
+appium-python-client  # Core Appium client for Python, essential for mobile automation
+loguru  # Advanced logging library for better debug information
+lxml  # Efficient XML and HTML processing, used for parsing view hierarchies
+numpy  # Numerical computing library, useful for data manipulation and analysis
+attrs  # Reduces boilerplate for Python classes, used in defining UI objects
