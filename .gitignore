@@ -132,3 +132,6 @@ venv.bak/
 
 # Pyre type checker
 .pyre/
+
+
+constants.cpython-37.pyc
