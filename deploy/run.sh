@@ -8,6 +8,9 @@ Yellow='\033[0;33m'
 Red='\033[0;31m'
 NC='\033[0m' # No Color
 
+# Change to the script's directory
+cd "$(dirname "$0")"
+
 is_command_present() {
     type "$1" >/dev/null 2>&1
 }
@@ -80,7 +83,7 @@ install_python_dependencies() {
     python3 -m pip install --upgrade pip
     
     echo "Installing Python dependencies..."
-    # Change the path to requirements.txt
+    # Use the correct path to requirements.txt
     python3 -m pip install -r ../requirements.txt
 }
 

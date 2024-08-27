@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from device.device_factory import DeviceFactory
 from pydantic import BaseModel
+import base64
 
 app = FastAPI()
 
@@ -25,7 +26,14 @@ class MobileAdapter:
     async def get_state(self):
         if self.device is None:
             return {"error": "Device not initialized"}
-        return await self.device.get_state()
+        state = await self.device.get_state()
+        if isinstance(state, bytes):
+            # Encode binary data as base64
+            return {"state": base64.b64encode(state).decode('ascii'), "encoding": "base64"}
+        elif isinstance(state, str):
+            return {"state": state, "encoding": "utf-8"}
+        else:
+            return {"state": str(state), "encoding": "str"}
 
     async def perform_action(self, action_type: str, **kwargs): 
         if self.device is None:
@@ -60,4 +68,4 @@ async def perform_action(action_type: str, **kwargs):
     return await mobile_adapter.perform_action(action_type, **kwargs)
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8001, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
