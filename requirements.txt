@@ -6,7 +6,3 @@ attrs  # Classes without boilerplate
 str2bool  # Convert string to boolean
 fastapi  # FastAPI framework
 uvicorn  # ASGI server for FastAPI
-opentelemetry-api  # OpenTelemetry API
-opentelemetry-sdk  # OpenTelemetry SDK
-opentelemetry-exporter-otlp-proto-grpc  # OpenTelemetry OTLP exporter
-opentelemetry-instrumentation-fastapi  # FastAPI instrumentation for OpenTelemetry
