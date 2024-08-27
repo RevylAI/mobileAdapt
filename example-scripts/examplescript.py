@@ -7,7 +7,7 @@ import io
 import os
 
 ''' From the root directory use the following command to start the script:
-    python -m example-scripts.run_android
+   python example-scripts/examplescript.py
 '''
 
 async def save_screenshot(screenshot_data, filename):

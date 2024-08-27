@@ -53,16 +53,14 @@ class MobileAdapt:
         """
         await self.device.input(x, y, text)
 
-    async def swipe(self, x: int, y: int, direction: str):
+    async def swipe(self, direction: str):
         """
         Perform a swipe action on the device screen.
         
         Args:
-            x (int): The starting x-coordinate of the swipe.
-            y (int): The starting y-coordinate of the swipe.
             direction (str): The direction of the swipe (e.g., 'up', 'down', 'left', 'right').
         """
-        await self.device.swipe(x, y, direction)
+        await self.device.swipe(direction)
 
 def mobildevice(platform: str, app_url: str = None):
     """

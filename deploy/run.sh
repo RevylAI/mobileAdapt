@@ -63,20 +63,13 @@ install_python_dependencies() {
     echo "Upgrading pip..."
     python3 -m pip install --upgrade pip
     
-    echo "Installing mobileadapt and its dependencies..."
-    python3 -m pip install -e ".[dev]"
-    
-    echo "Installing mobileadapt package..."
-    python3 -m pip install mobileadapt
+    echo "Installing Python dependencies..."
+    python3 -m pip install -r ../requirements.txt
 }
 
 install_appium() {
-    echo "Installing Appium and drivers..."
+    echo "Installing Appium..."
     $sudo_cmd npm install -g appium
-    appium driver install uiautomator2
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-        appium driver install xcuitest
-    fi
 }
 
 start_appium() {
@@ -87,31 +80,6 @@ start_appium() {
     sleep 5  # Give Appium some time to start up
 }
 
-setup_mobile_sdk() {
-    echo "Setting up Mobile SDK environment..."
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-        # macOS-specific paths
-        export ANDROID_HOME=$HOME/Library/Android/sdk
-        export IOS_HOME=$(xcode-select -p)
-    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        # Linux-specific Android SDK path
-        export ANDROID_HOME=$HOME/Android/Sdk
-    fi
-    
-    if [ -d "$ANDROID_HOME" ]; then
-        export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-        echo "Android SDK path set to: $ANDROID_HOME"
-    else
-        echo "Android SDK not found at $ANDROID_HOME. Please install Android SDK and set ANDROID_HOME manually."
-    fi
-
-    if [[ "$OSTYPE" == "darwin"* ]] && [ -d "$IOS_HOME" ]; then
-        echo "iOS SDK path set to: $IOS_HOME"
-    elif [[ "$OSTYPE" == "darwin"* ]]; then
-        echo "iOS SDK not found. Please install Xcode and run xcode-select --install"
-    fi
-}
-
 # Main script execution
 echo -e "${Green}Setting up the mobile adapter environment...${NC}"
 
@@ -120,7 +88,6 @@ request_sudo
 install_dependencies
 install_python_dependencies
 install_appium
-setup_mobile_sdk
 start_appium
 
 echo -e "${Green}Mobile adapter setup complete.${NC}"

@@ -195,10 +195,11 @@ class AndroidDevice(Device):
         self.driver.execute_script('mobile: scroll', {'direction': direction_map[direction]})
 
     async def swipe(self, direction):
-        left = self.window_size["width"] * 0.2
-        top = self.window_size["height"] * 0.2
-        width = self.window_size["width"] * 0.6
-        height = self.window_size["height"] * 0.6
+        window_size = self.driver.get_window_size()
+        left = window_size["width"] * 0.2
+        top = window_size["height"] * 0.2
+        width = window_size["width"] * 0.6
+        height = window_size["height"] * 0.6
         self.driver.execute_script("mobile: swipeGesture", {
             "left": left,
             "top": top,
