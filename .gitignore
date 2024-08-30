@@ -15,7 +15,7 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
-
+*.xml
 # CocoaPods
 Pods/
 

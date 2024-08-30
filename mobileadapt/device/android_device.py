@@ -4,7 +4,7 @@ from device.device import Device
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
 from device.android_view_hierarchy import ViewHierarchy
-
+from typing import Tuple
 from loguru import logger
 import os
 # Android Emulator Config
@@ -145,7 +145,7 @@ class AndroidDevice(Device):
         }
         self.options = UiAutomator2Options().load_capabilities(self.desired_caps)
 
-    async def get_state(self):
+    async def get_state(self) -> Tuple[str, bytes, UI]:
         raw_appium_state = self.driver.page_source
 
         file_path = os.path.join(os.path.dirname(__file__), 'android_view_hierarchy.xml')

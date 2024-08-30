@@ -62,7 +62,7 @@ class MobileAdapt:
         """
         await self.device.swipe(direction)
 
-def mobildevice(platform: str, app_url: str = None):
+def mobileadapt(platform: str, app_url: str = None):
     """
     Create and return a MobileAdapt instance.
     

@@ -11,6 +11,16 @@ Mobileadapt is a powerful tool built on top of Appium that enables the creation 
 
 ## Quick Start
 
+```bash
+
+poetry add mobileadapt
+```      
+or if you have pip installed:
+
+```bash
+pip install mobileadapt
+```
+
 For detailed instructions on getting started with Mobileadapt, please refer to our [Quickstart Guide](https://mobileadapt.revyl.ai/quickstart).
 
 ### Prerequisites
@@ -42,3 +52,16 @@ We welcome contributions to the Mobileadapt project! If you'd like to contribute
 ## License
 
 Mobileadapt is released under the MIT License. See the [LICENSE](https://github.com/RevylAI/Mobileadapt/blob/main/LICENSE) file for more details.
+
+## Citations
+
+```
+bibtex
+@misc{revylai2024mobileadapt,
+  title        = {Mobileadapt},
+  author       = {Anam Hira, Landseer Enga, Aarib Sarker, Wasif Sarker, Hanzel Hira, Sushan Leel},
+  year         = {2024},
+  howpublished = {GitHub},
+  url          = {https://github.com/RevylAI/Mobileadapt}
+}
+```
