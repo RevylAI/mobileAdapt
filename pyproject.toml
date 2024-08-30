@@ -1,0 +1,38 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "mobileadapt"
+version = "0.1.0"
+description = "A package for mobile app adaptation and testing"
+authors = ["Revyl AI <anam@revyl.ai>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/RevylAI/Mobileadapt"
+homepage = "https://mobileadapt.revyl.ai"
+packages = [{include = "mobileadapt"}]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+appium-python-client = "*"
+loguru = "*"
+lxml = "*"
+numpy = "*"
+attrs = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/RevylAI/Mobileadapt/issues"
