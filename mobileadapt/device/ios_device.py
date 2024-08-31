@@ -2,7 +2,7 @@ from mobileadapt.device.device import Device
 
 
 class IOSDevice(Device):
-    def __init__(self, app_start_url=''):
+    def __init__(self, app_start_url=""):
         pass
 
     def get_state(self):

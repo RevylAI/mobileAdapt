@@ -39,3 +39,8 @@ pytest = "^6.2"
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/RevylAI/Mobileadapt/issues"
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+isort = "^5.13.2"
+mypy = "^1.11.2"
+

@@ -1,37 +1,41 @@
 import base64
+import os
 from datetime import datetime
-from mobileadapt.device.device import Device
+from typing import Tuple
+
+import cv2
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
-from mobileadapt.device.android.android_view_hierarchy import ViewHierarchy
-from mobileadapt.utils.constants import XML_SCREEN_WIDTH, XML_SCREEN_HEIGHT
-from typing import Tuple
 from loguru import logger
-import os
-import cv2
+
 # Android Emulator Config
 from mobileadapt.device.android.android_ui import UI
+from mobileadapt.device.android.android_view_hierarchy import ViewHierarchy
+from mobileadapt.device.device import Device
+from mobileadapt.utils.constants import XML_SCREEN_HEIGHT, XML_SCREEN_WIDTH
+
 
 class AndroidDevice(Device):
-    def __init__(self, app_package, download_directory='default', session_id=None):
+    def __init__(self, app_package, download_directory="default", session_id=None):
         super().__init__(app_package)
         self.download_directory = download_directory
         self.session_id = session_id
         self.desired_caps = {
-            'deviceName': 'Android Device',
-            'automationName': 'UiAutomator2',
-            'autoGrantPermission': True,
-            'newCommandTimeout': 600,
-            'mjpegScreenshotUrl': 'http://localhost:4723/stream.mjpeg',
-
+            "deviceName": "Android Device",
+            "automationName": "UiAutomator2",
+            "autoGrantPermission": True,
+            "newCommandTimeout": 600,
+            "mjpegScreenshotUrl": "http://localhost:4723/stream.mjpeg",
         }
         self.options = UiAutomator2Options().load_capabilities(self.desired_caps)
 
     async def get_state(self) -> Tuple[str, bytes, UI]:
         raw_appium_state = self.driver.page_source
 
-        file_path = os.path.join(os.path.dirname(__file__), 'android_view_hierarchy.xml')
-        xml_file = open(file_path, 'w')
+        file_path = os.path.join(
+            os.path.dirname(__file__), "android_view_hierarchy.xml"
+        )
+        xml_file = open(file_path, "w")
         xml_file.write(raw_appium_state)
         xml_file.close()
 
@@ -60,19 +64,16 @@ class AndroidDevice(Device):
 
     async def input(self, x, y, text):
         await self.tap(x, y)
-        self.driver.execute_script('mobile: type', {'text': text})
+        self.driver.execute_script("mobile: type", {"text": text})
 
     async def drag(self, startX, startY, endX, endY):
         self.driver.swipe(startX, startY, endX, endY, duration=1000)
 
     async def scroll(self, direction):
-        direction_map = {
-            'up': 'UP',
-            'down': 'DOWN',
-            'left': 'LEFT',
-            'right': 'RIGHT'
-        }
-        self.driver.execute_script('mobile: scroll', {'direction': direction_map[direction]})
+        direction_map = {"up": "UP", "down": "DOWN", "left": "LEFT", "right": "RIGHT"}
+        self.driver.execute_script(
+            "mobile: scroll", {"direction": direction_map[direction]}
+        )
 
     async def swipe(self, direction):
         window_size = self.driver.get_window_size()
@@ -80,14 +81,17 @@ class AndroidDevice(Device):
         top = window_size["height"] * 0.2
         width = window_size["width"] * 0.6
         height = window_size["height"] * 0.6
-        self.driver.execute_script("mobile: swipeGesture", {
-            "left": left,
-            "top": top,
-            "width": width,
-            "height": height,
-            "direction": direction,
-            "percent": 1.0
-        })
+        self.driver.execute_script(
+            "mobile: swipeGesture",
+            {
+                "left": left,
+                "top": top,
+                "width": width,
+                "height": height,
+                "direction": direction,
+                "percent": 1.0,
+            },
+        )
 
     async def start_recording(self):
         """
@@ -133,21 +137,19 @@ class AndroidDevice(Device):
         return save_path
 
     async def stop_device(self):
-        '''
+        """
         Stops a test
-        '''
+        """
         pass
-    def generate_set_of_mark(self,
-                             ui,
-                             image: bytes,
-                             position='top-left') -> bytes:
-        '''
+
+    def generate_set_of_mark(self, ui, image: bytes, position="top-left") -> bytes:
+        """
         Code to generate a set of mark for a given image and UI state
         ui: UI object
         image: bytes of the image
         step_i: step number
         position: position of the annotation, defaults to 'top-lefts', can also be 'center'
-        '''
+        """
         # Convert image bytes to numpy array
         nparr = np.frombuffer(image, np.uint8)
         img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
@@ -161,7 +163,7 @@ class AndroidDevice(Device):
                 ui.elements[element_id].bounding_box.x1,
                 ui.elements[element_id].bounding_box.y1,
                 ui.elements[element_id].bounding_box.x2,
-                ui.elements[element_id].bounding_box.y2
+                ui.elements[element_id].bounding_box.y2,
             ]
 
             # Calculate the area of the bounding box
@@ -171,19 +173,22 @@ class AndroidDevice(Device):
             if area > k:
                 # Draw a rectangle around the element
                 cv2.rectangle(
-                    img, (int(bounds[0]), int(bounds[1])),
-                    (int(bounds[2]), int(bounds[3])), (0, 0, 255), 5)
+                    img,
+                    (int(bounds[0]), int(bounds[1])),
+                    (int(bounds[2]), int(bounds[3])),
+                    (0, 0, 255),
+                    5,
+                )
 
                 text = str(element_id)
                 text_size = 2  # Fixed text size
                 font = cv2.FONT_HERSHEY_SIMPLEX
 
                 # Calculate the width and height of the text
-                text_width, text_height = cv2.getTextSize(
-                    text, font, text_size, 2)[0]
+                text_width, text_height = cv2.getTextSize(text, font, text_size, 2)[0]
 
                 # Calculate the position of the text
-                if position == 'top-left':
+                if position == "top-left":
                     text_x = int(bounds[0])
                     text_y = int(bounds[1]) + text_height
                 else:  # Default to center
@@ -191,33 +196,51 @@ class AndroidDevice(Device):
                     text_y = (int(bounds[1]) + int(bounds[3])) // 2 + text_height // 2
 
                 # Draw a black rectangle behind the text
-                cv2.rectangle(img, (text_x, text_y - text_height),
-                              (text_x + text_width, text_y), (0, 0, 0), thickness=cv2.FILLED)
+                cv2.rectangle(
+                    img,
+                    (text_x, text_y - text_height),
+                    (text_x + text_width, text_y),
+                    (0, 0, 0),
+                    thickness=cv2.FILLED,
+                )
 
                 # Draw the text in white
-                cv2.putText(img, text, (text_x, text_y), font,
-                            text_size, (255, 255, 255), 4)
+                cv2.putText(
+                    img, text, (text_x, text_y), font, text_size, (255, 255, 255), 4
+                )
 
         # Convert the image to bytes
-        _, img_encoded = cv2.imencode('.png', img)
+        _, img_encoded = cv2.imencode(".png", img)
         img_bytes = img_encoded.tobytes()
 
         return img_bytes
 
     async def start_device(self):
-        '''
+        """
         TODO: implement
-        '''
+        """
         try:
-            self.driver = webdriver.Remote('http://localhost:4723', options=self.options)
+            self.driver = webdriver.Remote(
+                "http://localhost:4723", options=self.options
+            )
         except BaseException:
-            self.desired_caps.pop('mjpegScreenshotUrl')
+            self.desired_caps.pop("mjpegScreenshotUrl")
             self.options = UiAutomator2Options().load_capabilities(self.desired_caps)
-            self.driver = webdriver.Remote('http://localhost:4723', options=self.options)
+            self.driver = webdriver.Remote(
+                "http://localhost:4723", options=self.options
+            )
 
         # self.driver.start_recording_screen()
-        self.driver.update_settings({'waitForIdleTimeout': 0, 'shouldWaitForQuiescence': False, 'maxTypingFrequency': 60})
+        self.driver.update_settings(
+            {
+                "waitForIdleTimeout": 0,
+                "shouldWaitForQuiescence": False,
+                "maxTypingFrequency": 60,
+            }
+        )
         # self.driver.get_screenshot_as_base64()
+
+
 #         self.driver.execute_script('mobile: startScreenStreaming', {
 #             'width': 1080,
 #             'height': 1920,
@@ -228,6 +251,6 @@ class AndroidDevice(Device):
 
 
 if __name__ == "__main__":
-    ui = UI(os.path.join(os.path.dirname(__file__), 'android_view_hierarchy.xml'))
+    ui = UI(os.path.join(os.path.dirname(__file__), "android_view_hierarchy.xml"))
     encoded_ui = ui.encoding()
     logger.info(f"Encoded UI: {encoded_ui}")
