@@ -2,7 +2,7 @@ import base64
 import os
 from datetime import datetime
 from typing import Tuple
-
+import numpy as np
 import cv2
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
@@ -45,7 +45,7 @@ class AndroidDevice(Device):
 
         # Return encoded UI and screenshot
         return encoded_ui, screenshot, ui
-
+    
     async def navigate(self, package_name):
         """
         Opens the specified package using Appium with UiAutomator2.
