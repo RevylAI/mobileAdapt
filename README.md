@@ -29,7 +29,7 @@ For detailed instructions on getting started with Mobileadapt, please refer to o
 - iOS Simulator and Xcode (for iOS adaptation - coming soon)
 - macOS or Linux (recommended)
 
-### Installation
+###Local Development
 
 1. Clone the repository:
    ```bash
@@ -38,7 +38,7 @@ For detailed instructions on getting started with Mobileadapt, please refer to o
 
 2. Start the server:
    ```bash
-   ./run.sh
+   ./scripts/setup.sh
    ```
 
 ## Documentation
