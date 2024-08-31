@@ -17,11 +17,19 @@ We're excited that you're interested in contributing to mobileadapt! This docume
 ## Setting Up the Development Environment
 
 1. Ensure you have Python 3.7+ installed.
-2. Install the required dependencies:
+2. Install Poetry (if not already installed):
    ```
-   pip install -r requirements.txt
+   curl -sSL https://install.python-poetry.org | python3 -
    ```
-3. Set up Appium and the necessary mobile SDKs as described in the project's README.
+3. Install the project dependencies:
+   ```
+   poetry install
+   ```
+4. Activate the virtual environment:
+   ```
+   poetry shell
+   ```
+5. Set up Appium and the necessary mobile SDKs as described in the project's README.
 
 ## Making Changes
 
@@ -30,7 +38,7 @@ We're excited that you're interested in contributing to mobileadapt! This docume
 3. Ensure your code follows the project's coding style (we use PEP 8 for Python).
 4. Run the test suite to make sure all tests pass:
    ```
-   python -m unittest discover tests
+   poetry run python -m unittest discover tests
    ```
 
 ## Updating Documentation

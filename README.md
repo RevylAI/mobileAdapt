@@ -1,4 +1,4 @@
-# Mobileadapt: Mobile Adapter for Mobile LLM Agents
+# Mobileadapt: Crossplatform Mobile LLM Agents
 
 Mobileadapt is a powerful tool built on top of Appium that enables the creation of mobile LLM (Language Model) agents for android, and ios . This project aims to bridge the gap between large language models and mobile device interaction, allowing for more sophisticated automation and testing capabilities.
 

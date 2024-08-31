@@ -1,4 +1,4 @@
-from device.device import Device
+from mobileadapt.device.device import Device
 
 
 class IOSDevice(Device):

@@ -1,134 +1,16 @@
 import base64
 from datetime import datetime
-from device.device import Device
+from mobileadapt.device.device import Device
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
-from device.android_view_hierarchy import ViewHierarchy
+from mobileadapt.device.android.android_view_hierarchy import ViewHierarchy
+from mobileadapt.utils.constants import XML_SCREEN_WIDTH, XML_SCREEN_HEIGHT
 from typing import Tuple
 from loguru import logger
 import os
+import cv2
 # Android Emulator Config
-SCREEN_WIDTH = 1080
-SCREEN_HEIGHT = 1920
-SCREEN_CHANNEL = 4
-SCREEN_TOP_HEAD = 63
-SCREEN_BOTTOM_HEAD = 126
-# screen config
-ADJACENT_BOUNDING_BOX_THRESHOLD = 3
-NORM_VERTICAL_NEIGHBOR_MARGIN = 0.01
-NORM_HORIZONTAL_NEIGHBOR_MARGIN = 0.01
-INPUT_ACTION_UPSAMPLE_RATIO = 1
-# XML screen config
-XML_SCREEN_WIDTH = 1440
-XML_SCREEN_HEIGHT = 2960
-# Get state implementation
-
-
-def sortchildrenby_viewhierarchy(view, attr="bounds"):
-    if attr == 'bounds':
-        bounds = [(ele.uiobject.bounding_box.x1, ele.uiobject.bounding_box.y1,
-                   ele.uiobject.bounding_box.x2, ele.uiobject.bounding_box.y2)
-                  for ele in view]
-        sorted_bound_index = [
-            bounds.index(i) for i in sorted(
-                bounds, key=lambda x: (
-                    x[1], x[0]))]
-
-        sort_children = [view[i] for i in sorted_bound_index]
-        view[:] = sort_children
-
-
-CLASS_MAPPING = {
-    'TEXTVIEW': 'p',
-    'BUTTON': 'button',
-    'IMAGEBUTTON': 'button',
-    'IMAGEVIEW': 'img',
-    'EDITTEXT': 'input',
-    'CHECKBOX': 'input',
-    'CHECKEDTEXTVIEW': 'input',
-    'TOGGLEBUTTON': 'button',
-    'RADIOBUTTON': 'input',
-    'SPINNER': 'select',
-    'SWITCH': 'input',
-    'SLIDINGDRAWER': 'input',
-    'TABWIDGET': 'div',
-    'VIDEOVIEW': 'video',
-    'SEARCHVIEW': 'div'
-}
-
-
-class UI():
-    def __init__(self, xml_file):
-        self.xml_file = xml_file
-        self.elements = {}
-
-    def encoding(self):
-        logger.info('reading hierarchy tree from {} ...'.format(
-            self.xml_file.split('/')[-1]))
-        with open(self.xml_file, 'r', encoding='utf-8') as f:
-            vh_data = f.read().encode()
-
-        vh = ViewHierarchy(
-            screen_width=XML_SCREEN_WIDTH,
-            screen_height=XML_SCREEN_HEIGHT)
-        vh.load_xml(vh_data)
-        view_hierarchy_leaf_nodes = vh.get_leaf_nodes()
-        sortchildrenby_viewhierarchy(view_hierarchy_leaf_nodes, 'bounds')
-
-        logger.debug('encoding the ui elements in hierarchy tree...')
-        codes = ''
-        # logger.info(view_hierarchy_leaf_nodes)
-        for _id, ele in enumerate(view_hierarchy_leaf_nodes):
-            obj_type = ele.uiobject.obj_type.name
-            text = ele.uiobject.text
-            text = text.replace('\n', ' ')
-            resource_id = ele.uiobject.resource_id if ele.uiobject.resource_id is not None else ''
-            content_desc = ele.uiobject.content_desc
-            html_code = self.element_encoding(
-                _id, obj_type, text, content_desc, resource_id)
-            codes += html_code
-            self.elements[_id] = ele.uiobject
-        codes = "<html>\n" + codes + "</html>"
-
-        # logger.info('Encoded UI\n' + codes)
-        return codes
-
-    def element_encoding(
-            self,
-            _id,
-            _obj_type,
-            _text,
-            _content_desc,
-            _resource_id):
-
-        _class = _resource_id.split('id/')[-1].strip()
-        _text = _text.strip()
-        assert _obj_type in CLASS_MAPPING.keys(), print(_obj_type)
-        tag = CLASS_MAPPING[_obj_type]
-
-        if _obj_type in ['CHECKBOX', 'CHECKEDTEXTVIEW', 'SWITCH']:
-            code = f'  <input id={_id} type="checkbox" name="{_class}">\n'
-            code += f'  <label for={_id}>{_text}</label>\n'
-        elif _obj_type == 'RADIOBUTTON':
-            code = f'  <input id={_id} type="radio" name="{_class}">\n'
-            code += f'  <label for={_id}>{_text}</label>\n'
-        elif _obj_type == 'SPINNER':
-            code = f'  <label for={_id}>{_text}</label>\n'
-            code += f'  <select id={_id} name="{_class}"></select>\n'
-        elif _obj_type == 'IMAGEVIEW':
-            if _class == "":
-                code = f'  <img id={_id} alt="{_content_desc}" />\n'
-            else:
-                code = f'  <img id={_id} class="{_class}" alt="{_content_desc}" />\n'
-        else:
-            if _class == "":
-                _text = _content_desc if _text == "" else _text
-                code = f'  <{tag} id={_id}">{_text}</{tag}>\n'
-            else:
-                _text = _content_desc if _text == "" else _text
-                code = f'  <{tag} id={_id} class="{_class}">{_text}</{tag}>\n'
-        return code
-
+from mobileadapt.device.android.android_ui import UI
 
 class AndroidDevice(Device):
     def __init__(self, app_package, download_directory='default', session_id=None):
@@ -155,8 +37,6 @@ class AndroidDevice(Device):
 
         ui = UI(file_path)
         encoded_ui: str = ui.encoding()
-        logger.info(f"Encoded UI: {encoded_ui}")
-        # Take screenshot and encode as base64
         screenshot: bytes = self.driver.get_screenshot_as_png()
 
         # Return encoded UI and screenshot
@@ -257,6 +137,72 @@ class AndroidDevice(Device):
         Stops a test
         '''
         pass
+    def generate_set_of_mark(self,
+                             ui,
+                             image: bytes,
+                             position='top-left') -> bytes:
+        '''
+        Code to generate a set of mark for a given image and UI state
+        ui: UI object
+        image: bytes of the image
+        step_i: step number
+        position: position of the annotation, defaults to 'top-lefts', can also be 'center'
+        '''
+        # Convert image bytes to numpy array
+        nparr = np.frombuffer(image, np.uint8)
+        img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+        height, width, _ = img.shape
+
+        # Define the minimum area
+        k = 3000
+
+        for element_id in ui.elements:
+            bounds = [
+                ui.elements[element_id].bounding_box.x1,
+                ui.elements[element_id].bounding_box.y1,
+                ui.elements[element_id].bounding_box.x2,
+                ui.elements[element_id].bounding_box.y2
+            ]
+
+            # Calculate the area of the bounding box
+            area = (bounds[2] - bounds[0]) * (bounds[3] - bounds[1])
+
+            # Only label elements with an area over k
+            if area > k:
+                # Draw a rectangle around the element
+                cv2.rectangle(
+                    img, (int(bounds[0]), int(bounds[1])),
+                    (int(bounds[2]), int(bounds[3])), (0, 0, 255), 5)
+
+                text = str(element_id)
+                text_size = 2  # Fixed text size
+                font = cv2.FONT_HERSHEY_SIMPLEX
+
+                # Calculate the width and height of the text
+                text_width, text_height = cv2.getTextSize(
+                    text, font, text_size, 2)[0]
+
+                # Calculate the position of the text
+                if position == 'top-left':
+                    text_x = int(bounds[0])
+                    text_y = int(bounds[1]) + text_height
+                else:  # Default to center
+                    text_x = (int(bounds[0]) + int(bounds[2])) // 2 - text_width // 2
+                    text_y = (int(bounds[1]) + int(bounds[3])) // 2 + text_height // 2
+
+                # Draw a black rectangle behind the text
+                cv2.rectangle(img, (text_x, text_y - text_height),
+                              (text_x + text_width, text_y), (0, 0, 0), thickness=cv2.FILLED)
+
+                # Draw the text in white
+                cv2.putText(img, text, (text_x, text_y), font,
+                            text_size, (255, 255, 255), 4)
+
+        # Convert the image to bytes
+        _, img_encoded = cv2.imencode('.png', img)
+        img_bytes = img_encoded.tobytes()
+
+        return img_bytes
 
     async def start_device(self):
         '''

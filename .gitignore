@@ -135,3 +135,6 @@ venv.bak/
 
 
 constants.cpython-37.pyc
+
+# Ignore XML files in mobileadapt/device directory
+mobileadapt/device/*.xml

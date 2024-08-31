@@ -1,7 +1,7 @@
 # device/device_factory.py
 # from .device import Device
-from device.android_device import AndroidDevice
-from device.ios_device import IOSDevice
+from mobileadapt.device.android.android_device import AndroidDevice
+from mobileadapt.device.ios_device import IOSDevice
 from loguru import logger
 
 

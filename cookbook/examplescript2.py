@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from PIL import Image
 import io
-from mobileadapt import mobildevice
+from mobileadapt import mobileadapt
 
 async def save_screenshot(screenshot_data, filename):
     image = Image.open(io.BytesIO(screenshot_data))
@@ -25,14 +25,14 @@ async def perform_actions(device):
     print("Swiped left")
     await device.swipe("right")
     print("Swiped right")
-    
+
     # Input text
     await device.input(150, 500, "Hello, MobileAdapt!")
     print("Input text at (150, 500)")
 
 async def main():
-    android_device = mobildevice(platform="android")
-    await android_device.initialize()
+    android_device = mobileadapt(platform="android")
+    await android_device.start_device()
 
     # Perform initial state capture
     encoded_ui, screenshot, ui = await android_device.get_state()

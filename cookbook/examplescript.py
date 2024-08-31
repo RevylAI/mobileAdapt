@@ -1,11 +1,11 @@
 import asyncio
 import base64
-from mobileadapt import mobildevice
+from mobileadapt import mobileadapt
 from datetime import datetime
 from PIL import Image
 import io
 import os
-
+from loguru import logger
 ''' From the root directory use the following command to start the script:
    python example-scripts/examplescript.py
 '''
@@ -17,20 +17,20 @@ async def save_screenshot(screenshot_data, filename):
 
 async def main():
     # Create an Android device instance
-    android_device = mobildevice(platform="android")
+    android_device = mobileadapt(platform="android")
     
     # Initialize the device (starts the Appium session)
-    await android_device.initialize()
+    await android_device.start_device()
     
     # Get the current state of the device
     encoded_ui, screenshot, ui = await android_device.get_state()
-    print("Current state:", encoded_ui)
+    logger.info(f"Current state: {encoded_ui}")
     
     # Save the first screenshot
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename1 = os.path.join(os.path.dirname(__file__), f"screenshot_before_{timestamp}.png")
-    await save_screenshot(screenshot, filename1)
-    print(f"Screenshot saved as {filename1}")
+    # filename1 = os.path.join(os.path.dirname(__file__), f"screenshot_before_{timestamp}.png")
+    #await save_screenshot(screenshot, filename1)
+    # print(f"Screenshot saved as {filename1}")
     
     # Perform a tap action at coordinates (100, 100)
     await android_device.tap(100, 100)
