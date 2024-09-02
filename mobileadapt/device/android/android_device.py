@@ -58,6 +58,26 @@ class AndroidDevice(Device):
         except Exception as e:
             logger.error(f"Failed to open package {package_name}. Error: {str(e)}")
             raise
+    async def find_id_bounds(self, action_id:str) -> Tuple[int,int]:
+        '''
+        Find the center of the element with the given action_id
+        '''
+        try:
+            bounds = [
+                self.ui.elements[action_id].bounds.x,
+                self.ui.elements[action_id].bounds.y,
+                self.ui.elements[action_id].bounds.x + self.ui.elements[action_id].bounds.width,
+                self.ui.elements[action_id].bounds.y + self.ui.elements[action_id].bounds.height
+            ]
+            initial_x = bounds[0]
+            initial_y = bounds[1]
+            mid_x = (bounds[0] + bounds[2]) // 2
+            mid_y = (bounds[1] + bounds[3]) // 2
+            return mid_x, mid_y
+        except Exception as e:
+            logger.error(f"Failed to find bounds for {action_id}. Error: {str(e)}")
+            raise 
+            
 
     async def tap(self, x, y):
         self.driver.tap([(x, y)], 1)
@@ -138,9 +158,14 @@ class AndroidDevice(Device):
 
     async def stop_device(self):
         """
-        Stops a test
+        Stops the Android device.
         """
-        pass
+        try:
+            self.driver.quit()
+            logger.info("Device stopped successfully")
+        except Exception as e:
+            logger.error(f"Failed to stop device. Error: {str(e)}")
+            raise
 
     def generate_set_of_mark(self, ui, image: bytes, position="top-left") -> bytes:
         """
@@ -215,7 +240,7 @@ class AndroidDevice(Device):
 
         return img_bytes
 
-    async def start_device(self):
+    async def start_device(self, package_name: str = None):
         """
         TODO: implement
         """
@@ -238,16 +263,10 @@ class AndroidDevice(Device):
                 "maxTypingFrequency": 60,
             }
         )
-        # self.driver.get_screenshot_as_base64()
 
+        if package_name is not None:
+            await self.navigate(package_name)
 
-#         self.driver.execute_script('mobile: startScreenStreaming', {
-#             'width': 1080,
-#             'height': 1920,
-#             'considerRotation': True,
-#             'quality': 45,
-#             'bitRate': 500000,
-# })
 
 
 if __name__ == "__main__":

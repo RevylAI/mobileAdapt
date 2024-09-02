@@ -16,14 +16,25 @@ async def main():
 
     encoded_ui, screenshot, ui = await android_device.get_state()
 
-    # Generate set of mark
-    set_of_mark: bytes = android_device.generate_set_of_mark(ui, screenshot, position='top-left')
 
-    # Save image
+    # Open the app (Flexify - https://f-droid.org/en/packages/com.presley.flexify/)
+    #await android_device.navigate("com.presley.flexify")
 
-    with open("set_of_mark.png", "wb") as image_file:
-        image_file.write(set_of_mark)
-        
+
+
+    encoded_ui, screenshot, ui = await android_device.get_state()
+
+    # Create set of mark screenshot
+    set_of_mark: bytes = android_device.generate_set_of_mark(ui, screenshot)
+
+
+    # save set of mark screenshot
+
+    with open("set_of_mark.png", "wb") as f:
+        f.write(set_of_mark)
+
+
+
 
 
 

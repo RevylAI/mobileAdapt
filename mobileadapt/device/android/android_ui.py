@@ -60,7 +60,7 @@ class UI:
         view_hierarchy_leaf_nodes = vh.get_leaf_nodes()
         sortchildrenby_viewhierarchy(view_hierarchy_leaf_nodes)
 
-        logger.debug("encoding the ui elements in hierarchy tree...")
+        # logger.debug("encoding the ui elements in hierarchy tree...")
         codes = ""
         # logger.info(view_hierarchy_leaf_nodes)
         for _id, ele in enumerate(view_hierarchy_leaf_nodes):
