@@ -68,10 +68,12 @@ class AndroidDevice(Device):
         """
         try:
             action_id = int(action_id)
-            bounds = [self.ui.elements[action_id].bounding_box.x1,
-                      self.ui.elements[action_id].bounding_box.y1,
-                      self.ui.elements[action_id].bounding_box.x2,
-                      self.ui.elements[action_id].bounding_box.y2]
+            bounds = [
+                self.ui.elements[action_id].bounding_box.x1,
+                self.ui.elements[action_id].bounding_box.y1,
+                self.ui.elements[action_id].bounding_box.x2,
+                self.ui.elements[action_id].bounding_box.y2,
+            ]
             initial_x = bounds[0]
             initial_y = bounds[1]
             mid_x = (bounds[0] + bounds[2]) // 2
@@ -331,11 +333,15 @@ class AndroidDevice(Device):
             case "tap":
                 await self.tap_id(action_grounded["action_id"])
             case "input":
-                await self.input_text_id(action_grounded["action_id"], action_grounded["text"])
+                await self.input_text_id(
+                    action_grounded["action_id"], action_grounded["text"]
+                )
             case "scroll":
                 await self.scroll(action_grounded["direction"])
             case "swipe":
-                await self.swipe(action_grounded["action_id"], action_grounded["direction"])
+                await self.swipe(
+                    action_grounded["action_id"], action_grounded["direction"]
+                )
             case "validate":
                 raise NotImplementedError(
                     "Implement custom validation logic or head to revyl.ai to view options"
