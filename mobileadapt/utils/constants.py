@@ -1,4 +1,3 @@
-
 # Android Emulator Config
 SCREEN_WIDTH = 1080
 SCREEN_HEIGHT = 1920

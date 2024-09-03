@@ -7,16 +7,16 @@ class Device(ABC):
 
     @abstractmethod
     def start_device(self):
-        '''
+        """
         Function to start device
-        '''
+        """
         pass
 
     @abstractmethod
     def stop_device(self):
-        '''
+        """
         Function to stop device
-        '''
+        """
         pass
 
     @abstractmethod
