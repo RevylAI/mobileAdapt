@@ -2,6 +2,11 @@
 
 Mobileadapt is a powerful tool built on top of Appium that enables the creation of mobile LLM (Language Model) agents for android, and ios . This project aims to bridge the gap between large language models and mobile device interaction, allowing for more sophisticated automation and testing capabilities.
 
+## Documentation
+
+For full documentation, visit [mobileadapt.revyl.ai](https://mobileadapt.revyl.ai).
+
+
 ## Key Features
 
 - **Android Support**: Works seamlessly with Android devices and emulators.
@@ -121,10 +126,6 @@ For detailed instructions on getting started with Mobileadapt, please refer to o
    ```bash
    ./scripts/setup.sh
    ```
-
-## Documentation
-
-For full documentation, visit [mobileadapt.revyl.ai](https://mobileadapt.revyl.ai).
 
 ## Roadmap
 - [ ] iOS Support
