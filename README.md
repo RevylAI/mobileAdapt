@@ -114,7 +114,7 @@ For detailed instructions on getting started with Mobileadapt, please refer to o
 
 1. Clone the repository:
    ```bash
-   git clone --branch main https://github.com/RevylAI/Mobileadapt/ && cd mobileadapt/deploy
+   git clone https://github.com/RevylAI/Mobileadapt/ && cd mobileadapt/deploy
    ```
 
 2. Start the server:
@@ -128,8 +128,10 @@ For full documentation, visit [mobileadapt.revyl.ai](https://mobileadapt.revyl.a
 
 ## Roadmap
 - [ ] iOS Support
+- [ ] Abstract to different drivers other than appium
 - [ ] Recording interactions
 - [] Screen sharing via websocket to host recording
+
 
 
 

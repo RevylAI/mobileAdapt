@@ -34,6 +34,7 @@ str2bool = "^1.1"
 pillow = "^10.4.0"
 opencv-python = "^4.10.0.84"
 retrying = "^1.3.4"
+openai = "^1.43.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"

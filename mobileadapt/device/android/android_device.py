@@ -1,9 +1,10 @@
 import base64
 import os
 from datetime import datetime
-from typing import Tuple
-import numpy as np
+from typing import Any, Dict, Tuple
+
 import cv2
+import numpy as np
 from appium import webdriver
 from appium.options.android import UiAutomator2Options
 from loguru import logger
@@ -28,6 +29,7 @@ class AndroidDevice(Device):
             "mjpegScreenshotUrl": "http://localhost:4723/stream.mjpeg",
         }
         self.options = UiAutomator2Options().load_capabilities(self.desired_caps)
+        self.ui = None
 
     async def get_state(self) -> Tuple[str, bytes, UI]:
         raw_appium_state = self.driver.page_source
@@ -39,13 +41,14 @@ class AndroidDevice(Device):
         xml_file.write(raw_appium_state)
         xml_file.close()
 
-        ui = UI(file_path)
-        encoded_ui: str = ui.encoding()
+        self.ui = UI(file_path)
+
+        encoded_ui: str = self.ui.encoding()
         screenshot: bytes = self.driver.get_screenshot_as_png()
 
         # Return encoded UI and screenshot
-        return encoded_ui, screenshot, ui
-    
+        return encoded_ui, screenshot, self.ui
+
     async def navigate(self, package_name):
         """
         Opens the specified package using Appium with UiAutomator2.
@@ -58,17 +61,17 @@ class AndroidDevice(Device):
         except Exception as e:
             logger.error(f"Failed to open package {package_name}. Error: {str(e)}")
             raise
-    async def find_id_bounds(self, action_id:str) -> Tuple[int,int]:
-        '''
+
+    async def find_id_bounds(self, action_id: str) -> Tuple[int, int]:
+        """
         Find the center of the element with the given action_id
-        '''
+        """
         try:
-            bounds = [
-                self.ui.elements[action_id].bounds.x,
-                self.ui.elements[action_id].bounds.y,
-                self.ui.elements[action_id].bounds.x + self.ui.elements[action_id].bounds.width,
-                self.ui.elements[action_id].bounds.y + self.ui.elements[action_id].bounds.height
-            ]
+            action_id = int(action_id)
+            bounds = [self.ui.elements[action_id].bounding_box.x1,
+                      self.ui.elements[action_id].bounding_box.y1,
+                      self.ui.elements[action_id].bounding_box.x2,
+                      self.ui.elements[action_id].bounding_box.y2]
             initial_x = bounds[0]
             initial_y = bounds[1]
             mid_x = (bounds[0] + bounds[2]) // 2
@@ -76,11 +79,38 @@ class AndroidDevice(Device):
             return mid_x, mid_y
         except Exception as e:
             logger.error(f"Failed to find bounds for {action_id}. Error: {str(e)}")
-            raise 
-            
+            raise
 
     async def tap(self, x, y):
         self.driver.tap([(x, y)], 1)
+
+    async def input_text_id(self, action_id: str, text: str):
+        """
+        Input text into the element with the given action_id
+        """
+        x, y = await self.find_id_bounds(action_id)
+        await self.input(x, y, text)
+
+    async def tap_id(self, action_id: str):
+        """
+        Tap the element with the given action_id
+        """
+        x, y = await self.find_id_bounds(action_id)
+        await self.tap(x, y)
+
+    async def scroll_id(self, action_id: str, direction: str):
+        """
+        Scroll the element with the given action_id in the given direction
+        """
+        x, y = await self.find_id_bounds(action_id)
+        await self.scroll(x, y, direction)
+
+    async def swipe_id(self, action_id: str, direction: str):
+        """
+        Swipe the element with the given action_id in the given direction
+        """
+        x, y = await self.find_id_bounds(action_id)
+        await self.swipe(x, y, direction)
 
     async def input(self, x, y, text):
         await self.tap(x, y)
@@ -242,8 +272,29 @@ class AndroidDevice(Device):
 
     async def start_device(self, package_name: str = None):
         """
-        TODO: implement
+        Start the Android device and initialize the Appium driver.
+
+        This method sets up the Appium driver connection to the Android device or emulator.
+        It first attempts to connect using the default capabilities. If that fails, it removes
+        the 'mjpegScreenshotUrl' capability and tries again.
+
+        After successfully connecting, it updates the driver settings to optimize performance:
+        - Disables waiting for idle state
+        - Disables waiting for quiescence
+        - Sets the maximum typing frequency
+
+        Args:
+            package_name (str, optional): The name of the package to launch after
+                                          starting the device. If None, no package
+                                          is launched. Defaults to None.
+
+        Raises:
+            WebDriverException: If unable to connect to the Appium server or start the session.
+
+        Note:
+            This method should be called before performing any actions on the device.
         """
+
         try:
             self.driver = webdriver.Remote(
                 "http://localhost:4723", options=self.options
@@ -267,6 +318,30 @@ class AndroidDevice(Device):
         if package_name is not None:
             await self.navigate(package_name)
 
+    async def perform_action(self, action_grounded: Dict[str, Any]):
+        """
+        Perform an action on the device
+        action_grounded: Dict[str, Any]
+        action_type: str
+        action_id: str
+
+        """
+        case_action = action_grounded["action_type"]
+        match case_action:
+            case "tap":
+                await self.tap_id(action_grounded["action_id"])
+            case "input":
+                await self.input_text_id(action_grounded["action_id"], action_grounded["text"])
+            case "scroll":
+                await self.scroll(action_grounded["direction"])
+            case "swipe":
+                await self.swipe(action_grounded["action_id"], action_grounded["direction"])
+            case "validate":
+                raise NotImplementedError(
+                    "Implement custom validation logic or head to revyl.ai to view options"
+                )
+            case _:
+                raise ValueError(f"Unknown action type: {case_action}")
 
 
 if __name__ == "__main__":
