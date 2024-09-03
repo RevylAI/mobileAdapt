@@ -130,7 +130,7 @@ For full documentation, visit [mobileadapt.revyl.ai](https://mobileadapt.revyl.a
 - [ ] iOS Support
 - [ ] Abstract to different drivers other than appium
 - [ ] Recording interactions
-- [] Screen sharing via websocket to host recording
+- [ ] Screen sharing via websocket to host recording
 
 
 
