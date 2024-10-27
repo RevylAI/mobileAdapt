@@ -52,8 +52,11 @@ class IOSDevice(Device):
         xml_file.close()
 
         ui = UI(file_path)
+        self.ui = ui
         encoded_ui: str = ui.encoding()
         logger.info(f"Encoded UI: {encoded_ui}")
+        screenshot:bytes = self.driver.get_screenshot_as_png()
+        return encoded_ui, screenshot, ui
 
     def generate_set_of_mark(self,
                              ui,
@@ -136,6 +139,13 @@ class IOSDevice(Device):
         }
         await self.driver.execute_script('mobile: scroll', {'direction': direction_map[direction]})
 
+    async def get_screenshot(self) -> bytes:
+        '''
+        Get Screenshot as bytes
+        '''
+        screenshot:bytes = self.driver.get_screenshot_as_png()
+        return screenshot
+    
     async def stop_device(self):
         '''
         Stops the device
