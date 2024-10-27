@@ -1,4 +1,4 @@
-from .core import MobileAdapt
+
 from .device.device_factory import DeviceFactory
 
 

@@ -3,7 +3,7 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "mobileadapt"
+name = "cognisim"
 version = "0.1.0"
 description = "A package for mobile app adaptation and testing"
 authors = ["Revyl AI <anam@revyl.ai>"]
@@ -11,7 +11,7 @@ license = "MIT"
 readme = "README.md"
 repository = "https://github.com/RevylAI/Mobileadapt"
 homepage = "https://mobileadapt.revyl.ai"
-packages = [{include = "mobileadapt"}]
+packages = [{include = "cognisim"}]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -35,6 +35,7 @@ pillow = "^10.4.0"
 opencv-python = "^4.10.0.84"
 retrying = "^1.3.4"
 openai = "^1.43.0"
+setuptools = "^75.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"

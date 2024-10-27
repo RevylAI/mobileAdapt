@@ -5,7 +5,7 @@ from datetime import datetime
 
 from PIL import Image
 
-from mobileadapt import mobileadapt
+from cognisim import mobileadapt
 
 
 async def save_screenshot(screenshot_data, filename):

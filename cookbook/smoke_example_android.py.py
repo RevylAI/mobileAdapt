@@ -7,7 +7,7 @@ from datetime import datetime
 from loguru import logger
 from PIL import Image
 
-from mobileadapt import mobileadapt
+from cognisim import mobileadapt
 
 """ From the root directory use the following command to start the script:
    python example-scripts/examplescript.py

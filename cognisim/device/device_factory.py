@@ -1,7 +1,6 @@
 # device/device_factory.py
 # from .device import Device
 from cognisim.device.android.android_device import AndroidDevice
-from cognisim.device.web_device import WebDevice
 from cognisim.device.ios.ios_device import IOSDevice
 from loguru import logger
 
@@ -28,14 +27,7 @@ class DeviceFactory:
 
         elif platform == 'web':
             logger.info("Creating web device")
-            return WebDevice(
-                app_start_url=app_url,
-                state_representation=state_representation,
-                download_directory=download_directory,
-                session_id=session_id,
-                tracing=tracing,
-                tracingconfig=tracingconfig
-            )
+            raise NotImplementedError("Web support is not yet implemented")
         else:
             raise ValueError(
                 "Invalid type. Expected one of: 'android', 'web'.")
