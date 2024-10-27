@@ -156,7 +156,26 @@ Mobileadapt is released under the MIT License. See the [LICENSE](https://github.
 
 
 
+# Credits
 
+@inproceedings{shvoEtAl2021appbuddy,
+  title={AppBuddy: Learning to Accomplish Tasks in Mobile Apps via Reinforcement Learning},
+  author={Maayan Shvo and
+               Zhiming Hu and
+               Rodrigo Toro Icarte and
+               Iqbal Mohomed and
+               Allan D. Jepson and
+               Sheila A. McIlraith},
+  booktitle={Canadian Conference on Artificial Intelligence},
+  year={2021}
+}
+
+@misc{google-research,
+  title={Google Research},
+  author={Google},
+  year={2021},
+  howpublished={\url{https://github.com/Berrylcm/google-research}}
+}
 
 
 
