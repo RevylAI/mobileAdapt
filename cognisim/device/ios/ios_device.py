@@ -43,7 +43,7 @@ class IOSDevice(Device):
         self.driver.update_settings({'waitForIdleTimeout': 0, 'shouldWaitForQuiescence': False, 'maxTypingFrequency': 60})
         
 
-    def get_state(self):
+    async def get_state(self):
         raw_appium_state = self.driver.page_source
 
         file_path = os.path.join(os.path.dirname(__file__), 'ios_view_hierarchy.xml')
