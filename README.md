@@ -1,6 +1,10 @@
-# Mobileadapt: Crossplatform Mobile LLM Agents
+# CogniSIM: Crossplatform Mobile LLM Agents
 
-Mobileadapt is a powerful tool built on top of Appium that enables the creation of mobile LLM (Language Model) agents for android, and ios . This project aims to bridge the gap between large language models and mobile device interaction, allowing for more sophisticated automation and testing capabilities.
+For cross platform LLM agentic testing
+
+Control and get LLM readable state from IOS and ANDROID
+
+
 
 ## Documentation
 
@@ -10,6 +14,8 @@ For full documentation, visit [mobileadapt.revyl.ai](https://mobileadapt.revyl.a
 ## Key Features
 
 - **Android Support**: Works seamlessly with Android devices and emulators.
+
+- **IOS Support**: Works seamlessly with Android devices and emulators.
 - **Appium Integration**: Leverages the power of Appium for reliable mobile automation.
 - **LLM Agent Compatibility**: Designed to work seamlessly with language model agents.
 - **iOS Support**: Coming soon!
@@ -149,7 +155,7 @@ Mobileadapt is released under the MIT License. See the [LICENSE](https://github.
 ```
 bibtex
 @misc{revylai2024mobileadapt,
-  title        = {Mobileadapt},
+  title        = {Cognisim},
   author       = {Anam Hira, Landseer Enga, Aarib Sarker, Wasif Sarker, Hanzel Hira, Sushan Leel},
   year         = {2024},
   howpublished = {GitHub},
