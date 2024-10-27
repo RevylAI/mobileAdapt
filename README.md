@@ -20,6 +20,11 @@ At Revyl, we use this approach to test mobile apps with LLMs. Our platform integ
 
 #### [Revyl AI](https://revyl.ai)
 
+### Prerequisites
+
+- Android Virtual Device (for Android adaptation)
+- iOS Simulator and Xcode (for iOS adaptation - coming soon)
+- macOS or Linux (recommended)
 
 
 ## Quick Start
@@ -53,11 +58,54 @@ pip install cognisim
 
 For detailed instructions on getting started with Mobileadapt, please refer to our [Quickstart Guide](https://mobileadapt.revyl.ai/quickstart).
 
-### Prerequisites
 
-- Android Virtual Device (for Android adaptation)
-- iOS Simulator and Xcode (for iOS adaptation - coming soon)
-- macOS or Linux (recommended)
+
+# Usage
+### Android Basic Example
+
+```python
+import asyncio
+from cognisim import mobileadapt
+
+async def main():
+    # Initialize and start Android device
+    android_device = mobileadapt(platform="android")
+    await android_device.start_device()
+
+    # Get initial state and perform tap
+    _, _, _ = await android_device.get_state()
+    await android_device.tap(100, 100)
+
+    # Get state after tap
+    new_encoded_ui, _, _ = await android_device.get_state()
+    print("State after tap:", new_encoded_ui)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+### IOS Basic Example
+
+```python
+import asyncio
+from cognisim import mobileadapt
+
+async def main():
+    # Initialize and start iOS device
+    ios_device = mobileadapt(platform="ios")
+    await ios_device.start_device()
+
+    # Get device state
+    encoded_ui, _, _ = await ios_device.get_state()
+    print("Current state:", encoded_ui)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+### Go to [Documentation](https://mobileadapt.revyl.ai) or the cookbook folder for more examples and usage.
+
+
 
 
 ## Documentation

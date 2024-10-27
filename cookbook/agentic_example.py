@@ -11,7 +11,7 @@ from loguru import logger
 from openai import OpenAI
 from PIL import Image
 
-from mobileadapt import mobileadapt
+from cognisim import mobileadapt
 
 openai.api_key = "<your_openai_api_key>"
 
