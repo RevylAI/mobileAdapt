@@ -1,9 +1,63 @@
-# CogniSIM: Crossplatform Mobile LLM Agents
+# Cognisim: Crossplatform LLM Agent Library 
 
-For cross platform LLM agentic testing
+[Company Website](https://revyl.ai) | [Twitter](https://x.com/tryrevyl) |
 
-Control and get LLM readable state from IOS and ANDROID
 
+### Cross-Platform LLM Agent Testing
+
+**LLM Control Library for iOS and Android**
+
+Have you ever wanted to test your mobile app or control iOS and Android devices with an LLM? You've probably encountered context problems due to the accessibility being too long or just sending a screenshot to the LLM, which is not ideal.
+
+**Our Solution**
+
+We combine the accessibility tree with a set of mark prompting to provide a readable state for the LLM.
+
+**Real-World Application**
+
+At Revyl, we use this approach to test mobile apps with LLMs. Our platform integrates resilient end-to-end tests using agentic LLMs with open telemetry tracing, offering proactive observability into your mobile app.
+
+
+#### [Revyl AI](https://revyl.ai)
+
+
+
+## Quick Start
+
+
+Create a Simulator with ios/android and make sure you have appium installed
+
+
+For macOS, install Appium using Homebrew:
+```bash
+brew install appium
+```
+
+For all other operating systems, install Appium using npm:
+```bash
+npm i -g appium
+```
+
+
+To install the mobileadapt package:
+
+
+```bash
+poetry add cognisim
+```      
+or if you have pip installed:
+
+```bash
+pip install cognisim
+```
+
+For detailed instructions on getting started with Mobileadapt, please refer to our [Quickstart Guide](https://mobileadapt.revyl.ai/quickstart).
+
+### Prerequisites
+
+- Android Virtual Device (for Android adaptation)
+- iOS Simulator and Xcode (for iOS adaptation - coming soon)
+- macOS or Linux (recommended)
 
 
 ## Documentation
@@ -19,6 +73,44 @@ For full documentation, visit [mobileadapt.revyl.ai](https://mobileadapt.revyl.a
 - **Appium Integration**: Leverages the power of Appium for reliable mobile automation.
 - **LLM Agent Compatibility**: Designed to work seamlessly with language model agents.
 - **iOS Support**: Coming soon!
+
+
+
+
+### Local Development
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/RevylAI/Mobileadapt/ && cd mobileadapt/deploy
+   ```
+
+2. Start the server:
+   ```bash
+   ./scripts/setup.sh
+   ```
+
+## Roadmap
+- [x] iOS Support
+- [ ] Abstract to different drivers other than appium
+- [ ] Recording interactions
+- [ ] Screen sharing via websocket to host recording
+
+
+
+
+## Contributing
+
+We welcome contributions to the Mobileadapt project! If you'd like to contribute, please check our [Contribution Guidelines](https://github.com/RevylAI/Mobileadapt/blob/main/CONTRIBUTING.md).
+
+## License
+
+Mobileadapt is released under the MIT License. See the [LICENSE](https://github.com/RevylAI/Mobileadapt/blob/main/LICENSE) file for more details.
+
+
+
+
+
+
 
 
 ## How does it work?
@@ -75,80 +167,9 @@ We also create a set of mark prompting of the given state
 
 Here's an example of a set of mark image generated for the UI state:
 
-![Set of Mark Example](.github/assets/set_of_mark.png)
+<img src=".github/assets/set_of_mark.png" width="500" height="600">
 
 This image shows the UI elements with their corresponding IDs overlaid on the screenshot. This visual representation helps the LLM understand the layout and structure of the interface, making it easier to interact with specific elements.
-
-
-
-
-
-
-## Quick Start
-
-
-Create a Simulator with ios/android and make sure you have appium installed
-
-
-For macOS, install Appium using Homebrew:
-```bash
-brew install appium
-```
-
-For all other operating systems, install Appium using npm:
-```bash
-npm i -g appium
-```
-
-
-To install the mobileadapt package:
-
-
-```bash
-poetry add mobileadapt
-```      
-or if you have pip installed:
-
-```bash
-pip install mobileadapt
-```
-
-For detailed instructions on getting started with Mobileadapt, please refer to our [Quickstart Guide](https://mobileadapt.revyl.ai/quickstart).
-
-### Prerequisites
-
-- Android Virtual Device (for Android adaptation)
-- iOS Simulator and Xcode (for iOS adaptation - coming soon)
-- macOS or Linux (recommended)
-
-### Local Development
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/RevylAI/Mobileadapt/ && cd mobileadapt/deploy
-   ```
-
-2. Start the server:
-   ```bash
-   ./scripts/setup.sh
-   ```
-
-## Roadmap
-- [ ] iOS Support
-- [ ] Abstract to different drivers other than appium
-- [ ] Recording interactions
-- [ ] Screen sharing via websocket to host recording
-
-
-
-
-## Contributing
-
-We welcome contributions to the Mobileadapt project! If you'd like to contribute, please check our [Contribution Guidelines](https://github.com/RevylAI/Mobileadapt/blob/main/CONTRIBUTING.md).
-
-## License
-
-Mobileadapt is released under the MIT License. See the [LICENSE](https://github.com/RevylAI/Mobileadapt/blob/main/LICENSE) file for more details.
 
 ## Citations
 
