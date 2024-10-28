@@ -14,6 +14,11 @@
 
 Have you ever wanted to test your mobile app or control iOS and Android devices with an LLM? You've probably encountered context problems due to the accessibility view being too long or just sending a screenshot to the LLM, which provides limited accuracy.
 
+
+<video src=".github/assets/mobile_adapt_example.mp4" width="500" height="600" controls></video>
+(example of using cognisim to control an android device on the arcteryx app (bout to be dripped out))
+
+
 **Our Solution**
 
 We combine the accessibility tree with a set of mark prompting to provide a readable state for the LLM.
@@ -23,6 +28,8 @@ We combine the accessibility tree with a set of mark prompting to provide a read
 At Revyl, we use this approach to test mobile apps with LLMs. Our platform integrates resilient end-to-end tests using agentic LLMs with open telemetry tracing, offering proactive observability into your mobile app.
 
 If you are interested in putting your testing on autopilot, and catching bugs before your users do, 
+
+
 
 [book a demo with us](https://cal.com/landseer-enga/book-a-demo)
 
