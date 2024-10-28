@@ -2,12 +2,18 @@
 
 [Company Website](https://revyl.ai) | [Twitter](https://x.com/tryrevyl) |
 
+![Revyl AI Logo](.github/assets/dark_logo.png)
+
+
+
+
 
 ### Cross-Platform LLM Agent Testing
 
 **LLM Control Library for iOS and Android**
 
-Have you ever wanted to test your mobile app or control iOS and Android devices with an LLM? You've probably encountered context problems due to the accessibility being too long or just sending a screenshot to the LLM, which is not ideal.
+Have you ever wanted to test your mobile app or control iOS and Android devices with an LLM? You've probably encountered context problems due to the acces
+sibility being too long or just sending a screenshot to the LLM, which is not ideal.
 
 **Our Solution**
 
@@ -16,6 +22,10 @@ We combine the accessibility tree with a set of mark prompting to provide a read
 **Real-World Application**
 
 At Revyl, we use this approach to test mobile apps with LLMs. Our platform integrates resilient end-to-end tests using agentic LLMs with open telemetry tracing, offering proactive observability into your mobile app.
+
+If you are interested in putting your testing on autopilot, and catching bugs before your users do, 
+
+[book a demo with us](https://cal.com/landseer-enga/book-a-demo)
 
 
 #### [Revyl AI](https://revyl.ai)
