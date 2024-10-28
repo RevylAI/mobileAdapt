@@ -1,4 +1,4 @@
-# Cognisim: Crossplatform LLM Agent Library 
+# Cognisim
 
 [Company Website](https://revyl.ai) | [Twitter](https://x.com/tryrevyl) |
 
@@ -8,7 +8,7 @@
 
 
 
-### Cross-Platform LLM Agent Testing
+### Interaction utilies for crossplatform interaction agents
 
 **LLM Control Library for iOS and Android**
 
