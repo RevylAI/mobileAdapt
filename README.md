@@ -12,8 +12,7 @@
 
 **LLM Control Library for iOS and Android**
 
-Have you ever wanted to test your mobile app or control iOS and Android devices with an LLM? You've probably encountered context problems due to the acces
-sibility being too long or just sending a screenshot to the LLM, which is not ideal.
+Have you ever wanted to test your mobile app or control iOS and Android devices with an LLM? You've probably encountered context problems due to the accessibility view being too long or just sending a screenshot to the LLM, which provides limited accuracy.
 
 **Our Solution**
 
