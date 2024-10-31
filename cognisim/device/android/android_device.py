@@ -6,6 +6,7 @@ from appium.options.android import UiAutomator2Options
 from cognisim.device.android.android_view_hierarchy import ViewHierarchy
 import cv2
 from loguru import logger
+import numpy as np
 import os
 # Android Emulator Config
 SCREEN_WIDTH = 1080
@@ -366,7 +367,7 @@ class AndroidDevice(Device):
 
     async def start_device(self):
         '''
-        TODO: implement
+        Start the Android device and connect to the appium server
         '''
         try:
             self.driver = webdriver.Remote('http://localhost:4723', options=self.options)

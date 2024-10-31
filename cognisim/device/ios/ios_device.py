@@ -11,7 +11,9 @@ SCREEN_WITH = 430
 SCREEN_HEIGHT = 932
 
 SCREEN_CHANNEL = 4
-
+from appium.webdriver.common.appiumby import AppiumBy
+from datetime import datetime
+import base64
 
 class IOSDevice(Device):
     def __init__(self, app_package=None, download_directory='default', session_id=None):
@@ -42,7 +44,44 @@ class IOSDevice(Device):
         
         self.driver.update_settings({'waitForIdleTimeout': 0, 'shouldWaitForQuiescence': False, 'maxTypingFrequency': 60})
         
+    async def start_recording(self):
+        '''
+        Start recording screen on the IOS device
+        returns: None
+        '''
+        try:
+            self.driver.start_recording_screen()
+        except Exception as e:
+            logger.error(f"Failed to start screen recording. Error: {str(e)}")
+            raise
 
+    async def stop_recording(self, save_path=None):
+        '''
+        Stops screen recording on the IOS device and saves the video
+
+        Args:
+            save_path (str, optional): Path to save the video file. If not provided, a default path will be used.
+        
+        Returns:
+            str: Path to the saved video file
+
+        '''
+        video_base64 = self.driver.stop_recording_screen()
+        if save_path is None:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            filename = f"screen_recording_{timestamp}.mp4"
+            save_dir = os.path.join(os.getcwd(), "recordings")
+            os.makedirs(save_dir, exist_ok=True)
+            save_path = os.path.join(save_dir, filename)
+
+        with open(save_path, "wb") as video_file:
+            video_file.write(base64.b64decode(video_base64))
+
+        logger.info(f"Screen recording saved to: {save_path}")
+        return save_path
+    
+
+        
     async def get_state(self):
         raw_appium_state = self.driver.page_source
 
@@ -118,13 +157,15 @@ class IOSDevice(Device):
 
         return img_bytes
 
-    async def tap(self, x, y):
-        await self.driver.execute_script('mobile: tap', {'x': x, 'y': y})
+    
 
-    async def input(self, direction):
-        # TODO: Implement input for iOS device
-        await self.driver.execute_script('mobile: tap', {'x': x, 'y': y})
-        await self.driver.execute_script('mobile: type', {'text': text})
+    async def tap(self, x, y):
+        self.driver.execute_script('mobile: tap', {'x': x, 'y': y})
+
+    async def input(self, x, y, text):
+        self.driver.execute_script('mobile: tap', {'x': x, 'y': y})
+        self.driver.find_element(AppiumBy.IOS_PREDICATE, "type == 'XCUIElementTypeApplication'").send_keys(text)
+        #self.driver.execute_script('mobile: type', {'text': text})
 
     async def swipe(self, x, y, direction):
         # TODO: Implement swipe for iOS device
@@ -145,6 +186,53 @@ class IOSDevice(Device):
         '''
         screenshot:bytes = self.driver.get_screenshot_as_png()
         return screenshot
+    
+    async def capture_screenshot_with_bounding_box(self, bounds: dict, image_state: bytes = None) -> bytes:
+        """
+        Capture a screenshot with a bounding box drawn around a specified element.
+
+        Args:
+            bounds (dict): A dictionary containing the bounding box coordinates.
+                           Expected keys are x1, y1, x2, y2, all of which are integers.
+            image_state (bytes, optional): The current screenshot if available.
+
+        Returns:
+            bytes: The screenshot image with bounding box as bytes.
+        """
+        logger.info("Creating tagged image")
+        screenshot = image_state if image_state is not None else await self.device.screenshot()
+        if screenshot is None:
+            logger.info("Screenshot failed")
+            return None
+
+        # Convert the screenshot to a NumPy array
+        image_np = np.frombuffer(screenshot, dtype=np.uint8)
+        image = cv2.imdecode(image_np, cv2.IMREAD_COLOR)
+
+        # Extract bounding box coordinates
+        x1 = int(bounds[0])
+        y1 = int(bounds[1])
+        x2 = int(bounds[2])
+        y2 = int(bounds[3])
+
+        # Calculate width and height
+        #  width = x2 - x1
+        # height = y2 - y1
+
+        bright_color = (128, 0, 128)  # Pink color
+        # Draw the bounding box on the image
+        cv2.rectangle(image, (x1, y1), (x2, y2), bright_color, 5)
+
+        # Convert the image back to bytes
+        _, encoded_image = cv2.imencode('.png', image)
+        screenshot_with_bounding_box = encoded_image.tobytes()
+
+        return screenshot_with_bounding_box
+    
+    
+    async def navigate(self, package_name:str):
+        self.driver.activate_app(package_name)
+
     
     async def stop_device(self):
         '''
