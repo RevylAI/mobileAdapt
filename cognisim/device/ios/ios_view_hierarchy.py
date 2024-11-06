@@ -10,12 +10,12 @@ from loguru import logger
 SCREEN_WIDTH = 430
 SCREEN_HEIGHT = 932
 
-SCREEN_CHANNEL= 4
- 
+SCREEN_CHANNEL = 4
+
 ADJACENT_BOUNDING_BOX_THRESHOLD = 3
 NORM_VERTICAL_NEIGHTBOR_MARGIN = 0.01
 NORM_HORIZONTAL_NEIGHTBOR_MARGIN = 0.01
-INPUT_ACTION_UPSAMPLE_RATIO =1 
+INPUT_ACTION_UPSAMPLE_RATIO = 1
 XML_SCREEN_WIDTH = 430
 XML_SCREEN_HEIGHT = 932
 CLASS_MAPPING = {
@@ -43,6 +43,7 @@ CLASS_MAPPING = {
     "OTHER": "div"
 }
 
+
 class DomLocationKey(Enum):
     '''
     Keys of dom location info
@@ -50,6 +51,8 @@ class DomLocationKey(Enum):
     DEPTH = 0
     PREORDER_INDEX = 1
     POSTORDER_INDEX = 2
+
+
 class UIObjectType(Enum):
     """
     Typoes of the different UI objects
@@ -58,7 +61,7 @@ class UIObjectType(Enum):
     BUTTON = 1
     IMAGE = 2
     SWITCH = 3
-    CELL = 4 
+    CELL = 4
     OTHER = 5
     TABLE = 6
     NAVIGATIONBAR = 7
@@ -79,6 +82,7 @@ class UIObjectType(Enum):
     TEXTVIEW = 22
     WEBVIEW = 23
 
+
 class UIObjectGridLocation(Enum):
     '''
     The on-screen grid location (3x3 grid) of an UI object
@@ -93,6 +97,7 @@ class UIObjectGridLocation(Enum):
     BOTTOM_CENTER = 7
     BOTTOM_RIGHT = 8
 
+
 @attr.s
 class BoundingBox(object):
     '''
@@ -102,26 +107,28 @@ class BoundingBox(object):
     y1 = attr.ib()
     x2 = attr.ib()
     y2 = attr.ib()
+
+
 @attr.s
 class UiObject(object):
     '''
     Represents a UI object form the leaf node in the view hierarchy
     '''
-    #type
+    # type
     obj_type = attr.ib()
-    #name
+    # name
     obj_name = attr.ib()
 
     word_sequence = attr.ib()
-    # text 
+    # text
     text = attr.ib()
-    #accessibility label
+    # accessibility label
     accesible = attr.ib()
 
-    #ios_Type 
+    # ios_Type
     ios_class = attr.ib()
 
-    #name 
+    # name
     content_desc = attr.ib()
     #
 
@@ -157,7 +164,8 @@ def _build_word_sequence(text, content_desc, resource_id):
         name = resource_id.split('/')[-1]
         return filter(None, name.split('_'))
 
-def _build_object_type(ios_class:str):
+
+def _build_object_type(ios_class: str):
     '''
     Returns the object type based on `class` attribute
 
@@ -171,9 +179,10 @@ def _build_object_type(ios_class:str):
         widget_type = ios_class.split("XCUIElementType")[1]
     for obj_type in UIObjectType:
         if obj_type.name == widget_type.upper():
-            #logger.info(f"obj_type: {obj_type}")
+            # logger.info(f"obj_type: {obj_type}")
             return obj_type
     return UIObjectType.BUTTON
+
 
 def _build_object_name(text, content_desc):
     '''
@@ -185,6 +194,7 @@ def _build_object_name(text, content_desc):
     The object name
     '''
     return text if text else content_desc
+
 
 def _build_bounding_box(bounds):
     '''
@@ -198,10 +208,11 @@ def _build_bounding_box(bounds):
     '''
     match = re.compile(
         r'\[\'(\d+)\', \'(\d+)\'\]\[\'(\d+)\', \'(\d+)\'\]').match(bounds)
-    
+
     assert match
     x1, y1, x2, y2 = map(int, match.groups())
     return BoundingBox(x1, y1, x2, y2)
+
 
 def _build_clickable(element, tree_child_as_clickable=True):
     ''''
@@ -233,19 +244,20 @@ def _build_clickable(element, tree_child_as_clickable=True):
 
     return strtobool(clickable)
 
+
 def _pixel_distance(a_x1, a_x2, b_x1, b_x2):
     '''
     Calculates the pixel distance between bounding box a and b
 
     Args:
-    a_x1: The x_1 coordinate of box a 
+    a_x1: The x_1 coordinate of box a
     a_x2: The x_2 coordinate of box a
     b_x1: The x_1 coordinate of box b
     b_x2: The x_2 coordinate of box b
 
     Returns:
     The pixel distance between box a and b on the x acis. The distance
-    on the y acis can be calculated in the same way. The distance can be 
+    on the y acis can be calculated in the same way. The distance can be
     positive number (b is right/bottom to a ) and negative
     (b is left/top to a)
 
@@ -257,13 +269,13 @@ def _pixel_distance(a_x1, a_x2, b_x1, b_x2):
 
     2. If box b is close enough to box a on the left side. (distance is less than or equal to a threshold), it returns -1.
 
-    3. If box a and box b overlap on the x-axis it returns - 
-    
+    3. If box a and box b overlap on the x-axis it returns -
+
     4. If box b is to teh right of box a (b_x1 > a_x2), it reutrns the distance from the right side of box a to the left side of box b (b_x1 - a_x2)
 
     5. If none of the above conditions are met, box b is to the left of box a, and it returns the distance from the right side of box b to the left side of box a (b_x2- a_x1)
 
-    The function assumes that the x1 coordinate is the left side of a box and the x2 coordinate is teh right side. The returned distance can be positive (if b is to the right of a) 
+    The function assumes that the x1 coordinate is the left side of a box and the x2 coordinate is teh right side. The returned distance can be positive (if b is to the right of a)
     Tldr: the fucntion runs the distance between two boundings boxes along the x-acis and if they close enoguht it returns 1 or -1
     '''
 
@@ -271,7 +283,7 @@ def _pixel_distance(a_x1, a_x2, b_x1, b_x2):
         return 1
     if a_x1 <= b_x2 and b_x2 - a_x1 <= ADJACENT_BOUNDING_BOX_THRESHOLD:
         return -1
-    
+
     # overlap
     if (a_x1 <= b_x1 <= a_x2) or (a_x1 <= b_x2 <= a_x2) or (b_x1 <= a_x1 <= b_x2) or (b_x1 <= a_x2 <= b_x2):
         return 0
@@ -307,7 +319,8 @@ def _grid_coordinate(x, width):
         grid_coordinate_x = 2
     return grid_coordinate_x
 
-def _grid_location(bbox,screen_width, screen_height):
+
+def _grid_location(bbox, screen_width, screen_height):
     '''
     Calculates teh grid number of the UI bounding box
 
@@ -325,6 +338,7 @@ def _grid_location(bbox,screen_width, screen_height):
     bbox_grid_y = _grid_coordinate(bbox_center_y, screen_height)
     return UIObjectGridLocation(bbox_grid_y * 3 + bbox_grid_x)
 
+
 def get_view_hiearchy_leaf_relation(objects, _screen_width, _screen_height):
     '''
     Calculates teh adjacency relatio from list of view hierarchy leaf nodes
@@ -340,7 +354,7 @@ def get_view_hiearchy_leaf_relation(objects, _screen_width, _screen_height):
 
 
         Adjacency matrix for vertical, horizontal, and dom relation
-    
+
     '''
 
     vh_node_num = len(objects)
@@ -356,7 +370,7 @@ def get_view_hiearchy_leaf_relation(objects, _screen_width, _screen_height):
                 node2 = objects[column]
                 h_dist, v_dist = normalized_pixel_distance(
                     node1, node2, _screen_width, _screen_height)
-            
+
             vertical_adjacency[row][column] = v_dist
             horizontal_adjacency[row][column] = h_dist
     return {
@@ -367,7 +381,7 @@ def get_view_hiearchy_leaf_relation(objects, _screen_width, _screen_height):
 
 def normalized_pixel_distance(node1, node2, _screen_width, _screen_height):
     '''
-    Caclulates teh normalized 
+    Caclulates teh normalized
 
     Args:
     node1, node2: Another object
@@ -412,7 +426,7 @@ def _build_neighbors(node, view_hierarchy_leaf_nodes,
     '''
     if view_hierarchy_leaf_nodes is None:
         return None
-    
+
     vh_relation = get_view_hiearchy_leaf_relation(
         view_hierarchy_leaf_nodes, _screen_width, _screen_height)
     _neighbor = _get_single_direction_neighbors(
@@ -423,6 +437,7 @@ def _build_neighbors(node, view_hierarchy_leaf_nodes,
     for k, v in _neighbor.items():
         _neighbor[k] = view_hierarchy_leaf_nodes[v].get('pointer')
     return _neighbor
+
 
 def _get_single_direction_neighbors(object_idx, ui_v_dist, ui_h_dist):
     '''
@@ -469,8 +484,9 @@ def _get_single_direction_neighbors(object_idx, ui_v_dist, ui_h_dist):
     if left_neighbor.size:
         neighbor_dict['right'] = left_neighbor[np.argmin(
             horizontal_distance[left_neighbor])]
-        
+
     return neighbor_dict
+
 
 def _build_etree_from_json(root, json_dict):
     '''
@@ -501,10 +517,10 @@ def _build_etree_from_json(root, json_dict):
     root.set('focusable', str(json_dict.get('focusable', False)))
     root.set('focused', str(json_dict.get('focused', False)))
 
-    root.set('scrollable', 
+    root.set('scrollable',
              str(
                  json_dict.get('scrollable-horizontal', False) or
-                    json_dict.get('scrollable-vertical', False)
+                 json_dict.get('scrollable-vertical', False)
              ))
     root.set('clickable', str(json_dict.get('clickable', False)))
     root.set('long-clickable', str(json_dict.get('long-clickable', False)))
@@ -519,6 +535,7 @@ def _build_etree_from_json(root, json_dict):
             root.append(child_element)
             _build_etree_from_json(child_element, child)
 
+
 class LeafNode(object):
     '''
     Represent a leaf node in the view hierachy
@@ -526,7 +543,7 @@ class LeafNode(object):
 
     def __init__(
             self,
-            element, 
+            element,
             all_elements=None,
             dom_location=None,
             screen_width=SCREEN_WIDTH,
@@ -558,7 +575,7 @@ class LeafNode(object):
 
         inits = str([x_1, y_1])
         ends = str([x_2, y_2])
-        bounds = str(inits)+ str(ends)
+        bounds = str(inits) + str(ends)
 
         bbox = _build_bounding_box(bounds)
 
@@ -567,7 +584,7 @@ class LeafNode(object):
             content_desc=element.get('content-desc', default='').split('.')[-1]
             if '.' in element.get('name', default='') else element.get('name', default=''),
             obj_name=_build_object_name(
-                text=element.get('name', default='') ,
+                text=element.get('name', default=''),
                 content_desc=element.get('content-desc', default='')
             ),
             word_sequence=_build_word_sequence(
@@ -614,14 +631,14 @@ class LeafNode(object):
             intersection[0]) + other_ancestor_list.index(intersection[0]) + 1
 
 
-
 class ViewHierarchy(object):
     '''
     Represents the view hierachy from XCUI Test
     '''
+
     def __init__(self, screen_width=SCREEN_WIDTH, screen_height=SCREEN_HEIGHT):
         '''
-        Constructor 
+        Constructor
 
         Args:
 
@@ -652,9 +669,7 @@ class ViewHierarchy(object):
         self._root_element = self._root[0]
         self._all_visible_leaves = self._get_visible_leaves()
 
-
         self._dom_location_dict = self._calculate_dom_location()
-
 
     def load_json(self, json_content):
         '''
@@ -665,7 +680,7 @@ class ViewHierarchy(object):
         json_dict = json.loads(json_content)
         if json_dict:
             raise ValueError('The json content is empty')
-        
+
         self._root = etree.Element('hierarchy', rotation='0')
         self._root_element = etree.Element('node')
         self._root.append(self._root_element)
@@ -678,7 +693,7 @@ class ViewHierarchy(object):
     def get_leaf_nodes(self):
         '''
         Returns all the leaf nodes in the view hierarchy
-        
+
         '''
         return [
 
@@ -691,7 +706,7 @@ class ViewHierarchy(object):
             )
             for element in self._all_visible_leaves
         ]
-    
+
     def get_ui_objects(self):
         '''
         Returns a list of all UI objects represented by leaf nodes
@@ -700,7 +715,7 @@ class ViewHierarchy(object):
             LeafNode(element, self._all_visible_leaves, self._dom_location_dict[id(element)], self._screen_width, self._screen_height).uiobject
             for element in self._all_visible_leaves
         ]
-    
+
     def dedup(self, click_x_and_y):
         '''
         Dedup UI objects with same text or content_desc
@@ -725,7 +740,7 @@ class ViewHierarchy(object):
             if not name:
                 continue
         target_index = None
-        for index,element in enumerate(elements):
+        for index, element in enumerate(elements):
             box = _build_bounding_box(element.get('bounds'))
             if (box.x1 <= click_x <= box.x2) and (box.y1 <= click_y <= box.y2):
                 target_index = index
@@ -735,13 +750,11 @@ class ViewHierarchy(object):
             for ele in elements[1:]:
                 delete_element(ele)
         else:
-            for ele in elements[:target_index] + elements[target_index+1:]:
+            for ele in elements[:target_index] + elements[target_index + 1:]:
                 delete_element(ele)
 
         print('Dedup %d elements' % (len(elements) - 1))
 
-
-       
         self._dom_location_dict = self._calculate_dom_location_dict()
         self._all_visible_leaves = self._get_visible_leaves()
 
@@ -764,7 +777,6 @@ class ViewHierarchy(object):
         ]
 
         return all_visible_leaves
-    
 
     def _make_button_a_leaf(self, element):
         '''
@@ -781,7 +793,7 @@ class ViewHierarchy(object):
         This method is not thread safe if multiple threads call this method of same ViewHierarchy object object
 
         Returns:
-        dom_location_dict, dict of 
+        dom_location_dict, dict of
         {
             id(element): [depth, preorder-index, postorder-index]
         }
@@ -791,13 +803,13 @@ class ViewHierarchy(object):
             ancestors = [node for node in element.iterancestors()]
             dom_location_dict[id(element)][DomLocationKey.DEPTH.value] = len(ancestors)
 
-        self._peorder_index = 0 
+        self._peorder_index = 0
         self._preorder_iterate(self._root, dom_location_dict)
         self._postorder_index = 0
         self._postorder_iterate(self._root, dom_location_dict)
         return dom_location_dict
 
-    def _preorder_iterate(self, element,dom_location_dict):
+    def _preorder_iterate(self, element, dom_location_dict):
         '''
         Preorder traversal on the view hierarchy tree
         ARGS:
@@ -828,7 +840,7 @@ class ViewHierarchy(object):
 
     def _is_leaf(self, element):
         return not element.findall('.//*')
-    
+
     def _is_within_screen_bound(self, element):
         '''
         Checks if the element is within the screen bound
@@ -844,7 +856,7 @@ class ViewHierarchy(object):
         x_2 = str(int(x_1) + int(element.get('width')))
 
         y_2 = str(int(y_1) + int(element.get('height')))
-        #logger.info(x_1)
+        # logger.info(x_1)
         inits = str([x_1, y_1])
 
         ends = str([x_2, y_2])
@@ -860,15 +872,17 @@ class ViewHierarchy(object):
         y1_less_than_y2 = bbox.y1 < bbox.y2
 
         return in_x and in_y and x1_less_than_x2 and y1_less_than_y2
-    
+
+
 class UI:
     def __init__(self, xml_file):
         self.xml_file = xml_file
         self.elements = {
         }
+
     def sortchildrenby_viewhierarchy(self, view, attr="bounds"):
         if attr == "bounds":
-            bounds = [ 
+            bounds = [
                 (ele.uiobject.bounding_box.x1, ele.uiobject.bounding_box.y1, ele.uiobject.bounding_box.x2, ele.uiobject.bounding_box.y2)
                 for ele in view
             ]
@@ -881,7 +895,6 @@ class UI:
             view[:] = sort_children
 
     def encoding(self):
-        
         '''
         Encodes the UI into a string representation
 
@@ -897,11 +910,11 @@ class UI:
         )
         vh.load_xml(xml_content)
         view_hierarchy_leaf_nodes = vh.get_leaf_nodes()
-        #logger.info(view_hierarchy_leaf_nodes)
+        # logger.info(view_hierarchy_leaf_nodes)
         self.sortchildrenby_viewhierarchy(
             view_hierarchy_leaf_nodes,
             attr="bounds")
-        
+
         codes = ''
         for _id, ele in enumerate(view_hierarchy_leaf_nodes):
             obj_type_str = ele.uiobject.obj_type.name
@@ -913,24 +926,22 @@ class UI:
             content_desc = ele.uiobject.content_desc
             # logger.info(resource_id)
             # ogger.info(content_desc)
-            
+
             html_code = self.element_encoding(
-                _id=_id, 
-                _obj_type=obj_type_str, 
-                _text=text, 
-                _content_desc=content_desc, 
+                _id=_id,
+                _obj_type=obj_type_str,
+                _text=text,
+                _content_desc=content_desc,
                 _resource_id=resource_id
             )
 
-          
-            
             codes += html_code if html_code else ''
             self.elements[_id] = ele.uiobject
 
         codes = "<html>\n" + codes + "</html>"
 
-        return codes 
-    
+        return codes
+
     def action_encoding(self):
         '''
         Get Heuristic of possible actions output
@@ -938,11 +949,11 @@ class UI:
         '''
         pass
 
-    def element_encoding(self, 
-                         _id, 
-                         _obj_type, 
-                         _text, 
-                         _content_desc, 
+    def element_encoding(self,
+                         _id,
+                         _obj_type,
+                         _text,
+                         _content_desc,
                          _resource_id):
         '''
         Encodes the element into a string representation
@@ -959,13 +970,13 @@ class UI:
         '''
         _class = _resource_id.split('.')[-1] if '.' in _resource_id else _resource_id
         _text = _text.strip()
-        #logger.info(_id)
-        #logger.info(_obj_type)
-        
+        # logger.info(_id)
+        # logger.info(_obj_type)
+
         assert _obj_type in CLASS_MAPPING.keys()
 
         tag = CLASS_MAPPING[_obj_type]
-    
+
         if _obj_type == 'None':
             tag = ''
         code = ''
@@ -985,7 +996,3 @@ class UI:
             else:
                 code = f'<{tag} id="{_id}" class="{_class}">{_text}</{tag}>\n'
         return code
-
-
-
-

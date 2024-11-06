@@ -255,6 +255,7 @@ class AndroidDevice(Device):
         Stops a test
         '''
         pass
+
     async def capture_screenshot_with_bounding_box(self, bounds: dict, image_state: bytes = None) -> bytes:
         """
         Capture a screenshot with a bounding box drawn around a specified element.
@@ -296,7 +297,7 @@ class AndroidDevice(Device):
         screenshot_with_bounding_box = encoded_image.tobytes()
 
         return screenshot_with_bounding_box
-    
+
     def generate_set_of_mark(self,
                              ui,
                              image: bytes,
@@ -363,7 +364,6 @@ class AndroidDevice(Device):
         img_bytes = img_encoded.tobytes()
 
         return img_bytes
-
 
     async def start_device(self):
         '''

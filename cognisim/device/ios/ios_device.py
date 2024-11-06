@@ -1,3 +1,6 @@
+import base64
+from datetime import datetime
+from appium.webdriver.common.appiumby import AppiumBy
 from cognisim.device.device import Device
 from appium.options.ios import XCUITestOptions
 from appium import webdriver
@@ -11,9 +14,7 @@ SCREEN_WITH = 430
 SCREEN_HEIGHT = 932
 
 SCREEN_CHANNEL = 4
-from appium.webdriver.common.appiumby import AppiumBy
-from datetime import datetime
-import base64
+
 
 class IOSDevice(Device):
     def __init__(self, app_package=None, download_directory='default', session_id=None):
@@ -33,7 +34,7 @@ class IOSDevice(Device):
         }
 
         self.options = XCUITestOptions().load_capabilities(self.desired_caps)
-        
+
     async def start_device(self):
         '''
         Start the IOS device and connect to the appium server
@@ -44,11 +45,12 @@ class IOSDevice(Device):
             self.desired_caps.pop('mjpegScreenshotUrl')
             self.options = XCUITestOptions().load_capabilities(self.desired_caps)
             self.driver = webdriver.Remote('http://localhost:4723', options=self.options)
-        
+
         self.driver.update_settings({'waitForIdleTimeout': 0, 'shouldWaitForQuiescence': False, 'maxTypingFrequency': 60})
-    async def mobile_get_source(self,format='json'):
+
+    async def mobile_get_source(self, format='json'):
         return self.driver.execute_script('mobile: source', {'format': format, 'excludedAttributes': 'visible'})
-    
+
     async def start_recording(self):
         '''
         Start recording screen on the IOS device
@@ -66,7 +68,7 @@ class IOSDevice(Device):
 
         Args:
             save_path (str, optional): Path to save the video file. If not provided, a default path will be used.
-        
+
         Returns:
             str: Path to the saved video file
 
@@ -84,9 +86,7 @@ class IOSDevice(Device):
 
         logger.info(f"Screen recording saved to: {save_path}")
         return save_path
-    
 
-        
     async def get_state(self):
         try:
             raw_appium_state = await self.mobile_get_source()
@@ -104,21 +104,21 @@ class IOSDevice(Device):
         self.ui = ui
         encoded_ui: str = ui.encoding()
         logger.info(f"Encoded UI: {encoded_ui}")
-        screenshot:bytes = self.driver.get_screenshot_as_png()
+        screenshot: bytes = self.driver.get_screenshot_as_png()
         return encoded_ui, screenshot, ui
 
     def generate_set_of_mark(self,
                              ui,
-                             image:bytes,
+                             image: bytes,
                              position='top-left') -> bytes:
         '''
         Code to generate a set of mark for a given image and UI state
-        ui: UI object 
+        ui: UI object
         image: bytes of the image
         step_i: step number
         position: position of the annotation, defaults to 'top-lefts, can also be 'center
         '''
-        nparr = np.frombuffer(image,np.uint8)
+        nparr = np.frombuffer(image, np.uint8)
         img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
         height, width, _ = img.shape
         k = 3000
@@ -131,19 +131,19 @@ class IOSDevice(Device):
                 ui.elements[element_id].bounding_box.y2
             ]
             # Calculate the area of the bounding box
-            area = (bounds[2]-bounds[0])*(bounds[3]-bounds[1])
+            area = (bounds[2] - bounds[0]) * (bounds[3] - bounds[1])
 
-            # Only label elements with area over k 
+            # Only label elements with area over k
             if area > k:
                 # Draw a rectangle around the element
                 cv2.rectangle(
                     img, (int(bounds[0]), int(bounds[1])),
                     (int(bounds[2]), int(bounds[3])), (0, 0, 255), 5)
-                
+
                 text = str(element_id)
-                text_size = 2 # Fixed text size
+                text_size = 2  # Fixed text size
                 font = cv2.FONT_HERSHEY_SIMPLEX
-                
+
                 # Calculate the width and height of the text
                 text_width, text_height = cv2.getTextSize(text, font, text_size, 2)[0]
 
@@ -154,20 +154,18 @@ class IOSDevice(Device):
                     text_x = (int(bounds[0]) + int(bounds[2])) // 2 - text_width // 2
                     text_y = (int(bounds[1]) + int(bounds[3])) // 2 + text_height // 2
 
-                  # Draw a black rectangle behind the text
+                # Draw a black rectangle behind the text
                 cv2.rectangle(img, (text_x, text_y - text_height),
                               (text_x + text_width, text_y), (0, 0, 0), thickness=cv2.FILLED)
 
                 # Draw the text in white
                 cv2.putText(img, text, (text_x, text_y), font,
                             text_size, (255, 255, 255), 4)
-                
+
         _, img_encoded = cv2.imencode('.png', img)
         img_bytes = img_encoded.tobytes()
 
         return img_bytes
-
-    
 
     async def tap(self, x, y):
         self.driver.execute_script('mobile: tap', {'x': x, 'y': y})
@@ -175,7 +173,7 @@ class IOSDevice(Device):
     async def input(self, x, y, text):
         self.driver.execute_script('mobile: tap', {'x': x, 'y': y})
         self.driver.find_element(AppiumBy.IOS_PREDICATE, "type == 'XCUIElementTypeApplication'").send_keys(text)
-        #self.driver.execute_script('mobile: type', {'text': text})
+        # self.driver.execute_script('mobile: type', {'text': text})
 
     async def swipe(self, x, y, direction):
         # TODO: Implement swipe for iOS device
@@ -194,9 +192,9 @@ class IOSDevice(Device):
         '''
         Get Screenshot as bytes
         '''
-        screenshot:bytes = self.driver.get_screenshot_as_png()
+        screenshot: bytes = self.driver.get_screenshot_as_png()
         return screenshot
-    
+
     async def capture_screenshot_with_bounding_box(self, bounds: dict, image_state: bytes = None) -> bytes:
         """
         Capture a screenshot with a bounding box drawn around a specified element.
@@ -238,20 +236,18 @@ class IOSDevice(Device):
         screenshot_with_bounding_box = encoded_image.tobytes()
 
         return screenshot_with_bounding_box
-    
-    
-    async def navigate(self, package_name:str):
+
+    async def navigate(self, package_name: str):
         self.driver.activate_app(package_name)
 
-    
     async def stop_device(self):
         '''
         Stops the device
         '''
         pass
 
+
 if __name__ == "__main__":
     ui = UI(os.path.join(os.path.dirname(__file__), 'ios_view_hierarchy.xml'))
     encoded_ui = ui.encoding()
     logger.info(f"Encoded UI: {encoded_ui}")
-

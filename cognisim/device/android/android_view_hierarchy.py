@@ -6,7 +6,6 @@ import collections
 import json
 import re
 import numpy as np
-from loguru import logger
 import attr
 from str2bool import str2bool as strtobool
 from enum import Enum
@@ -149,7 +148,7 @@ def _build_bounding_box(bounds):
     """
     match = re.compile(r'\[(\d+),(\d+)\]\[(\d+),(\d+)\]').match(bounds)
     assert match, f"Invalid bounds format: {bounds}"
-    
+
     x1, y1, x2, y2 = map(int, match.groups())
     # logger.info(type(x1))
     return BoundingBox(x1=x1, y1=y1, x2=x2, y2=y2)
