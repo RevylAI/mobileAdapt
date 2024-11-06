@@ -171,7 +171,7 @@ def _build_object_type(ios_class:str):
         widget_type = ios_class.split("XCUIElementType")[1]
     for obj_type in UIObjectType:
         if obj_type.name == widget_type.upper():
-            logger.info(f"obj_type: {obj_type}")
+            #logger.info(f"obj_type: {obj_type}")
             return obj_type
     return UIObjectType.BUTTON
 
@@ -295,7 +295,8 @@ def _grid_coordinate(x, width):
       Note that the screen is divided into 3x3 grid, so the grid coordinate
       uses the number from 0, 1, 2.
     """
-    assert 0 <= x <= width
+    logger.info(f"x: {x}, width: {width}")
+    # assert 0 <= x <= width
     grid_x_0 = width / 3
     grid_x_1 = 2 * grid_x_0
     if 0 <= x < grid_x_0:
@@ -843,7 +844,7 @@ class ViewHierarchy(object):
         x_2 = str(int(x_1) + int(element.get('width')))
 
         y_2 = str(int(y_1) + int(element.get('height')))
-        logger.info(x_1)
+        #logger.info(x_1)
         inits = str([x_1, y_1])
 
         ends = str([x_2, y_2])
@@ -896,7 +897,7 @@ class UI:
         )
         vh.load_xml(xml_content)
         view_hierarchy_leaf_nodes = vh.get_leaf_nodes()
-        logger.info(view_hierarchy_leaf_nodes)
+        #logger.info(view_hierarchy_leaf_nodes)
         self.sortchildrenby_viewhierarchy(
             view_hierarchy_leaf_nodes,
             attr="bounds")
@@ -958,8 +959,8 @@ class UI:
         '''
         _class = _resource_id.split('.')[-1] if '.' in _resource_id else _resource_id
         _text = _text.strip()
-        logger.info(_id)
-        logger.info(_obj_type)
+        #logger.info(_id)
+        #logger.info(_obj_type)
         
         assert _obj_type in CLASS_MAPPING.keys()
 

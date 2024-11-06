@@ -22,11 +22,14 @@ class IOSDevice(Device):
         self.app_package = app_package
         self.session_id = session_id
         self.desired_caps = {
-            'deviceName': 'iPhone 15 Pro Max',
+            'deviceName': 'iPhone 14',
             'automationName': 'XCUITest',
             'autoGrantPermission': True,
             'newCommandTimeout': 600,
             'mjpegScreenshotUrl': 'http://localhost:4723/stream.mjpeg',
+            'platformVersion': '16.4',
+            'snapshotMaxDepth': 30,
+            'customSnapshotTimeout': 250,
         }
 
         self.options = XCUITestOptions().load_capabilities(self.desired_caps)
@@ -43,7 +46,9 @@ class IOSDevice(Device):
             self.driver = webdriver.Remote('http://localhost:4723', options=self.options)
         
         self.driver.update_settings({'waitForIdleTimeout': 0, 'shouldWaitForQuiescence': False, 'maxTypingFrequency': 60})
-        
+    async def mobile_get_source(self,format='json'):
+        return self.driver.execute_script('mobile: source', {'format': format, 'excludedAttributes': 'visible'})
+    
     async def start_recording(self):
         '''
         Start recording screen on the IOS device
@@ -83,7 +88,12 @@ class IOSDevice(Device):
 
         
     async def get_state(self):
-        raw_appium_state = self.driver.page_source
+        try:
+            raw_appium_state = await self.mobile_get_source()
+            logger.info(f"Raw Appium State: {raw_appium_state}")
+        except Exception as e:
+            logger.info(f"Error getting page source: {e}")
+            raw_appium_state = ""
 
         file_path = os.path.join(os.path.dirname(__file__), 'ios_view_hierarchy.xml')
         xml_file = open(file_path, 'w')
