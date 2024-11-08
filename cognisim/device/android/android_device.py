@@ -306,7 +306,7 @@ class AndroidDevice(Device):
         Code to generate a set of mark for a given image and UI state
         ui: UI object
         image: bytes of the image
-        step_i: step number
+        step_id: step ids
         position: position of the annotation, defaults to 'top-lefts', can also be 'center'
         '''
         # Convert image bytes to numpy array
