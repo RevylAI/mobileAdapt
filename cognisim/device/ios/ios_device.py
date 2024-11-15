@@ -194,6 +194,7 @@ class IOSDevice(Device):
         '''
         screenshot: bytes = self.driver.get_screenshot_as_png()
         return screenshot
+
     async def navigate(self, package_name: str):
         self.driver.activate_app(package_name)
 
@@ -238,9 +239,6 @@ class IOSDevice(Device):
         screenshot_with_bounding_box = encoded_image.tobytes()
 
         return screenshot_with_bounding_box
-
-    async def navigate(self, package_name: str):
-        self.driver.activate_app(package_name)
 
     async def stop_device(self):
         '''
