@@ -5,11 +5,13 @@ from cognisim.device.device import Device
 from appium.options.ios import XCUITestOptions
 from appium import webdriver
 from cognisim.device.ios.ios_view_hierarchy import UI
+from cognisim.device.ios.ios_view_hierarchy_maestro import get_formatted_hierarchy as get_formatted_hierarchy_maestro
 from loguru import logger
 import os
 import cv2
 import numpy as np
-
+import asyncio
+import json
 SCREEN_WITH = 430
 SCREEN_HEIGHT = 932
 
@@ -34,6 +36,7 @@ class IOSDevice(Device):
         }
 
         self.options = XCUITestOptions().load_capabilities(self.desired_caps)
+        self.use_maestro = True
 
     async def start_device(self):
         '''
@@ -65,7 +68,6 @@ class IOSDevice(Device):
     async def stop_recording(self, save_path=None):
         '''
         Stops screen recording on the IOS device and saves the video
-
         Args:
             save_path (str, optional): Path to save the video file. If not provided, a default path will be used.
 
@@ -87,25 +89,60 @@ class IOSDevice(Device):
         logger.info(f"Screen recording saved to: {save_path}")
         return save_path
 
-    async def get_state(self):
+    async def get_state(self, use_maestro=True):
         try:
-            raw_appium_state = await self.mobile_get_source()
-            logger.info(f"Raw Appium State: {raw_appium_state}")
+            if use_maestro:
+                encoded_ui, ui = await self.get_state_maestro()
+                logger.info(f"Maestro hierarchy: {encoded_ui}")
+            else:
+                raw_appium_state = self.driver.page_source
+
+                file_path = os.path.join(os.path.dirname(__file__), 'ios_view_hierarchy.xml')
+                xml_file = open(file_path, 'w')
+                xml_file.write(raw_appium_state)
+                xml_file.close()
+
+                ui = UI(file_path)
+                self.ui = ui
+                encoded_ui: str = ui.encoding()
+                logger.info(f"Encoded UI: {encoded_ui}")
+            # logger.info(f"Raw Appium State: {raw_appium_state}")
         except Exception as e:
             logger.info(f"Error getting page source: {e}")
             raw_appium_state = ""
 
-        file_path = os.path.join(os.path.dirname(__file__), 'ios_view_hierarchy.xml')
-        xml_file = open(file_path, 'w')
-        xml_file.write(raw_appium_state)
-        xml_file.close()
-
-        ui = UI(file_path)
-        self.ui = ui
-        encoded_ui: str = ui.encoding()
-        logger.info(f"Encoded UI: {encoded_ui}")
         screenshot: bytes = self.driver.get_screenshot_as_png()
         return encoded_ui, screenshot, ui
+
+    async def get_state_maestro(self):
+        '''
+        Use Maestro to get the view hierarchy
+        '''
+        try:
+            # Run maestro hierarchy command and capture output
+            process = await asyncio.create_subprocess_exec(
+                'maestro', 'hierarchy',
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE
+            )
+            stdout, stderr = await process.communicate()
+
+            if process.returncode != 0:
+                logger.error(f"Error getting Maestro hierarchy: {stderr.decode()}")
+                return None
+            # Parse JSON output
+            stdout = stdout.decode().strip()
+            # Parse until first opening brace
+            stdout = stdout[stdout.find('{'):]
+            hierarchy = json.loads(stdout)
+            # logger.info(f"Hierarchy length: {len(hierarchy)}")
+            # Format hierarchy
+            formatted_html, ui_objects = get_formatted_hierarchy_maestro(hierarchy)
+            return formatted_html, ui_objects
+
+        except Exception as e:
+            logger.error(f"Error in get_state_maestro: {e}")
+            return None
 
     def generate_set_of_mark(self,
                              ui,
@@ -175,9 +212,18 @@ class IOSDevice(Device):
         self.driver.find_element(AppiumBy.IOS_PREDICATE, "type == 'XCUIElementTypeApplication'").send_keys(text)
         # self.driver.execute_script('mobile: type', {'text': text})
 
-    async def swipe(self, x, y, direction):
-        # TODO: Implement swipe for iOS device
-        await self.driver.execute_script('mobile: swipe', {'x': x, 'y': y, 'direction': direction})
+    async def swipe(self, initial_x, initial_y, end_x, end_y, duration=1):
+        """
+        Performs a swipe gesture on the iOS device
+
+        Args:
+            initial_x (int): Starting x coordinate of the swipe
+            initial_y (int): Starting y coordinate of the swipe 
+            end_x (int): Ending x coordinate of the swipe
+            end_y (int): Ending y coordinate of the swipe
+            duration (int, optional): Duration of the swipe in seconds. Defaults to 1.
+        """
+        self.driver.execute_script('mobile: dragFromToForDuration', {'fromX': initial_x, 'fromY': initial_y, 'toX': end_x, 'toY': end_y, 'duration': duration})
 
     async def scroll(self, direction):
         direction_map = {
@@ -240,6 +286,7 @@ class IOSDevice(Device):
 
         return screenshot_with_bounding_box
 
+
     async def stop_device(self):
         '''
         Stops the device
@@ -250,4 +297,5 @@ class IOSDevice(Device):
 if __name__ == "__main__":
     ui = UI(os.path.join(os.path.dirname(__file__), 'ios_view_hierarchy.xml'))
     encoded_ui = ui.encoding()
+
     logger.info(f"Encoded UI: {encoded_ui}")
