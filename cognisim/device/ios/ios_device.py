@@ -218,7 +218,7 @@ class IOSDevice(Device):
 
         Args:
             initial_x (int): Starting x coordinate of the swipe
-            initial_y (int): Starting y coordinate of the swipe 
+            initial_y (int): Starting y coordinate of the swipe
             end_x (int): Ending x coordinate of the swipe
             end_y (int): Ending y coordinate of the swipe
             duration (int, optional): Duration of the swipe in seconds. Defaults to 1.
@@ -285,7 +285,6 @@ class IOSDevice(Device):
         screenshot_with_bounding_box = encoded_image.tobytes()
 
         return screenshot_with_bounding_box
-
 
     async def stop_device(self):
         '''
